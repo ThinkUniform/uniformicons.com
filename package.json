@@ -1,0 +1,55 @@
+{
+  "name": "uniformcss-docs",
+  "version": "1.0.0",
+  "description": "Documentation site for Uniform CSS, a utility-first CSS framework built for Sass.",
+  "scripts": {
+    "build": "eleventy",
+    "watch": "eleventy --watch",
+    "serve": "eleventy --serve",
+    "start": "eleventy --serve",
+    "debug": "DEBUG=* eleventy",
+    "uniform": "sass --load-path=./node_modules/uniformcss --load-path=./ --load-path=./optional-sass-path --no-source-map _sass/main.scss assets/css/uniform.css",
+    "uniform:compressed": "sass --load-path=./node_modules/uniformcss --load-path=./ --load-path=./optional-sass-path --no-source-map _sass/main.scss assets/css/uniform.min.css --style compressed",
+    "uniform:watch": "sass --load-path=./node_modules/uniformcss --load-path=./ --load-path=./optional-sass-path --no-source-map --watch _sass/main.scss assets/css/uniform.css",
+    "uniform:watch-compressed": "sass --load-path=./node_modules/uniformcss --load-path=./ --load-path=./optional-sass-path --no-source-map --watch _sass/main.scss assets/css/uniform.min.css --style compressed",
+    "uniform:purge": "purgecss -c purgecss.config.js -o assets/css/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/ThinkUniform/uniformcss.com.git"
+  },
+  "keywords": [
+    "css",
+    "sass",
+    "functional css",
+    "atomic css",
+    "responsive css",
+    "utility first",
+    "uniformcss"
+  ],
+  "author": {
+    "name": "Jin Su Park",
+    "email": "jinsupark@icloud.com",
+    "url": "https://jinsupark.com/"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ThinkUniform/uniformcss.com/issues"
+  },
+  "homepage": "https://github.com/ThinkUniform/uniformcss.com#readme",
+  "devDependencies": {
+    "@11ty/eleventy": "^1.0.2",
+    "@11ty/eleventy-navigation": "^0.3.5",
+    "@11ty/eleventy-plugin-rss": "^1.2.0",
+    "@11ty/eleventy-plugin-syntaxhighlight": "^4.2.0",
+    "eleventy-plugin-toc": "^1.1.5",
+    "luxon": "^3.1.1",
+    "markdown-it": "^13.0.1",
+    "markdown-it-anchor": "^8.6.6",
+    "markdown-it-attrs": "^4.1.4",
+    "markdown-it-container": "^3.0.0",
+    "postcss": "^8.4.20",
+    "purgecss": "^5.0.0",
+    "uniformcss": "^1.5.4"
+  }
+}
