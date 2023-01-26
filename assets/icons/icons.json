@@ -4,14 +4,16 @@
       "name": "Category 1",
       "icons": [
         {
+          "id": 1,
           "url": "https://example.com/icons/category1/icon1.svg",
           "name": "Icon 1",
-          "keywords": ["Liberty Peace", "cat", "bird"]
+          "keywords": ["keyword 1", "keyword 2", "keyword 3"]
         },
         {
+          "id": 2,
           "url": "https://example.com/icons/category1/icon2.svg",
           "name": "Icon 2",
-          "keywords": ["apple", "peach", "pineapple"]
+          "keywords": ["keyword4", "keyword5", "keyword6"]
         }
       ]
     },
@@ -19,11 +21,13 @@
       "name": "Category 2",
       "icons": [
         {
+          "id": 3,
           "url": "https://example.com/icons/category2/icon3.svg",
           "name": "Icon 3",
           "keywords": ["keyword7", "keyword8", "keyword9"]
         },
         {
+          "id": 4,
           "url": "https://example.com/icons/category2/icon4.svg",
           "name": "Icon 4",
           "keywords": ["keyword10", "keyword11", "keyword12"]

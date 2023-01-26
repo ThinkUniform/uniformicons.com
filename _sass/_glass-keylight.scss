@@ -13,13 +13,9 @@
 	z-index: 6;
 	mix-blend-mode: overlay;
 	filter: blur(32px);
-	&.is-hero {
-		transform: translateX(-15%);
-		top: 0;
-    left: -256px;
-	}
+
 	&.is-docs {
-		top: 0;
+		top: -100px;
 		left: 0;
 		transform: translateX(0%);
 	}
@@ -36,7 +32,6 @@
 	transform-origin: center center;
 	transform: rotate(45deg);
 
-	
 	&:before, &:after {
 		content: '';
 		display: block;
