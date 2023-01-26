@@ -8,7 +8,7 @@ layout: layouts/base.njk
 
 <section>
   <div class="px-20 sm.px-32">
-    <div class="relative max-w-1152 mx-auto pt-12 sm.pt-32">
+    <div class="relative max-w-896 lg.max-w-1152 mx-auto pt-12 sm.pt-32">
       <nav class="mb-56 sm.mb-96 top-n1 relative z-2">
         <div class="flex align-items-center justify-content-between py-10 mx-auto">
           <div class="w-256 flex align-items-center">
@@ -80,8 +80,8 @@ layout: layouts/base.njk
               <span>By the makers of <a class="https://uniformcss.com" target="_blank">Uniform CSS</a></span>
             </div>
 
-            <h1 class="font-6xl sm.font-8xl md.font-9xl lg.font-9xl leading-100 extrabold mb-24 tracking-tighter color-heading">
-              <span class="color-heading-accent">Open source <br class="hidden sm.inline">universal icons</span> made for modern UI design
+            <h1 class="font-6xl sm.font-7xl md.font-8xl lg.font-9xl leading-110 extrabold mb-24 tracking-tighter color-heading">
+              <span class="color-heading-accent">Open source <br class="hidden sm.inline">universal icons</span> made for modern <br class="hidden md.inline lg.hidden">UI design
             </h1>
             
             <p class="text-lg sm.text-lg md.text-lg max-w-512 tracking-tight mb-32 sm.mb-48 color-paragraph">
@@ -99,7 +99,7 @@ layout: layouts/base.njk
             </div>
           </div>
           <div class="col-12 sm.col-5 flex justify-content-center relative pointer-events-none">
-            <img src="/assets/img/hero-splash.svg" class="max-w-none w-640 ml-32 sm.ml-256 md.ml-112 lg.ml-96 relative mt-n112">
+            <img src="/assets/img/hero-splash.svg" class="max-w-none w-640 ml-32 sm.ml-256 md.ml-320 lg.ml-96 relative mt-n112">
           </div>
         </div>
       </div>
@@ -107,27 +107,27 @@ layout: layouts/base.njk
   </div>
 
   <div class="relative z-4 px-20 sm.px-32">
-    <div class="max-w-1152 mx-auto">
+    <div class="max-w-896 lg.max-w-1152 mx-auto">
       <div class="grid grid-cols-1 sm.grid-cols-2 gap-48 sm.gap-12 md.gap-24 mb-96 lg.mb-64">
         <div class="flex flex-col md.flex-row align-items-start gap-28">
-          <div class="flex align-items-center justify-content-center flex-none w-96 ml-n12 md.ml-0 md.w-160">
-            <img src="/assets/img/hero-explorer.svg" class="relative top-10">
+          <div class="flex align-items-center justify-content-center flex-none w-112 h-112 ml-n12 md.ml-0 md.w-160">
+            <img src="/assets/img/hero-explorer.svg" class="w-144 relative top-10">
           </div>
           <div>
-            <div class="inline-block radius-full flex align-items-center justify-content-center mb-12 px-6 py-4 border-1 border-teal-400 text-2xs leading-100 bold tracking-loose color-teal-200 bg-teal-400 bg-opacity-40">NEW</div>
-            <h3 class="color-heading text-xl leading-110 mb-12 bold"><span class="color-heading-accent">Customize and search</span> <br class="hidden sm.inline">through our entire icon library</h3>
+            {# <div class="inline-block radius-full flex align-items-center justify-content-center mb-12 px-6 py-4 border-1 border-teal-400 text-2xs leading-100 bold tracking-loose color-teal-200 bg-teal-400 bg-opacity-40">NEW</div> #}
+            <h3 class="color-heading text-xl leading-120 mb-12 bold"><span class="color-heading-accent">Customize and search</span> <br class="hidden sm.inline"> our entire icon library</h3>
             <p class="color-paragraph text-md mb-16 max-w-448">Select your style and find the perfect icon neatly displayed using our new icon explorer.</p>
             <a class="text-md bold color-white">View icon explorer</a>
           </div>
         </div>
         <div class="flex flex-col md.flex-row align-items-start gap-28 md.gap-10">
-          <div class="flex align-items-center justify-content-center flex-none w-96 ml-n12 md.ml-0 sm.w-80 md.w-160">
-            <img src="/assets/img/hero-figma.svg" class="w-72 sm.w-80 md.w-auto relative top-10">
+          <div class="flex align-items-center justify-content-center flex-none w-112 h-112 ml-n12 sm.ml-0 sm.w-80 md.w-160">
+            <img src="/assets/img/hero-figma.svg" class="w-96 sm.w-80 md.w-auto relative top-10">
           </div>
           <div>
-            <div class="inline-block radius-full flex align-items-center justify-content-center mb-12 px-6 py-4 border-1 border-yellow-400 text-2xs leading-100 bold tracking-loose color-yellow-200 bg-yellow-400 bg-opacity-40">PRO</div>
-            <h3 class="color-heading text-xl leading-110 mb-12 bold"><span class="color-heading-accent">Figma template</span> to boost <br class="hidden sm.inline">your design workflow</h3>
-            <p class="color-paragraph text-md mb-16 max-w-448">Access the entire icon library directly in your Figma with customizable layers and swappable instances.</p>
+            {# <div class="inline-block radius-full flex align-items-center justify-content-center mb-12 px-6 py-4 border-1 border-yellow-400 text-2xs leading-100 bold tracking-loose color-yellow-200 bg-yellow-400 bg-opacity-40">PRO</div> #}
+            <h3 class="color-heading text-xl leading-120 mb-12 bold"><span class="color-heading-accent">Figma template</span> to boost <br class="hidden sm.inline">your design workflow</h3>
+            <p class="color-paragraph text-md mb-16 max-w-448">Access the library directly in your Figma with customizable layers and swappable instances.</p>
             <span class="text-md bold color-white color-opacity-40">Coming soon</span>
           </div>
         </div>
@@ -216,7 +216,7 @@ layout: layouts/base.njk
 
 <section class="gsap-section-1">
   <div class="px-0 md.px-32">
-    <div class="max-w-1152 mx-auto relative grid grid-cols-1 md.grid-cols-2 gap-72 sm.gap-96 lg.gap-160 py-112 md.py-0">
+    <div class="max-w-896 lg.max-w-1152 mx-auto relative grid grid-cols-1 md.grid-cols-2 gap-72 sm.gap-96 lg.gap-160 py-112 md.py-0">
       <div class="px-32 md.px-0 md.py-112">
         <h3 class="color-heading text-3xl leading-110 mb-24 bold"><span class="color-heading-accent">Clean and precisely drawn</span> <br class="hidden sm.inline">for timeless neutrality</h3>
         <p class="color-paragraph text-md mb-72">All our icon elements are based on a consistent 48x48 pixel grid and layers are carefully sized and positioned to ensure every icon looks neutral, beautiful, and timeless.</p>
@@ -245,7 +245,7 @@ layout: layouts/base.njk
       </div>
 
       <div class="px-32 md.px-0 md.py-112">
-        <h3 class="color-heading text-3xl leading-110 mb-24 bold"><span class="color-heading-accent">Corner smoothing</span> and careful <br class="hidden sm.inline">attention to every detail</h3>
+        <h3 class="color-heading text-3xl leading-110 mb-24 bold"><span class="color-heading-accent">Corner smoothing</span> <br class="hidden lg.inline">attention to every detail</h3>
         <p class="color-paragraph text-md mb-12">We care about the tiniest details. We've enabled corner smoothing for more natural curvature and all our SVG outputs are cleaned up for optimal fidelity and file size.</p>
         <img src="/assets/img/corner-smoothing.svg" class="w-100p max-w-512 md.max-w-100p mx-auto">
       </div>
@@ -257,7 +257,7 @@ layout: layouts/base.njk
 
 <section class="mt-128 mb-256 gsap-section-1">
   <div class="px-20 sm.px-32">
-    <div class="relative max-w-1152 mx-auto">
+    <div class="relative max-w-896 lg.max-w-1152 mx-auto">
 
       <div class="glass-frame">
         <div class="glass-frame-light">
@@ -274,7 +274,7 @@ layout: layouts/base.njk
         </div>
       </div>
       <div class="relative z-1">
-        <h1 class="font-6xl sm.font-8xl md.font-9xl lg.font-9xl leading-110 extrabold mb-24 tracking-tighter color-heading">
+        <h1 class="font-6xl sm.font-7xl md.font-8xl lg.font-9xl leading-110 extrabold mb-24 tracking-tighter color-heading">
           <span class="color-heading-accent">Professional grade</span> library <br class="hidden sm.inline">made for the best dribbble UIs
         </h1>
         
@@ -436,7 +436,7 @@ layout: layouts/base.njk
 
 <section class="mb-256x gsap-section-2">
   <div class="px-20 sm.px-32">
-    <div class="relative max-w-1152 mx-auto">
+    <div class="relative max-w-896 lg.max-w-1152 mx-auto">
 
       <div class="glass-frame">
         <div class="glass-frame-light">
@@ -453,7 +453,7 @@ layout: layouts/base.njk
         </div>
       </div>
       <div class="relative z-1">
-        <h1 class="font-6xl sm.font-8xl md.font-9xl lg.font-9xl leading-110 extrabold mb-24 tracking-tighter color-heading">
+        <h1 class="font-6xl sm.font-7xl md.font-8xl lg.font-9xl leading-110 extrabold mb-24 tracking-tighter color-heading">
           <span class="color-heading-accent">Versatile and scalable</span> in<br class="hidden sm.inline"> in all the way it matters
         </h1>
         
@@ -556,7 +556,7 @@ layout: layouts/base.njk
 
 <section class="mb-72">
   <div class="px-20 sm.px-32">
-    <div class="max-w-1152 mx-auto">
+    <div class="max-w-896 lg.max-w-1152 mx-auto">
 
       <div class="glowing-divider mb-112"></div>
 
