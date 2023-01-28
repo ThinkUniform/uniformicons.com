@@ -236,3 +236,27 @@
 	transform: rotate(-90deg);
 	z-index: 1;
 }
+
+.ui-showcase {
+	@include apply('');
+	height: 568px;
+	@include screen(sm) {
+		height: 732px;
+	}
+	@include screen(lg) {
+		height: 811px;
+	}
+}
+.ui-grid {
+	@include apply('absolute grid grid-cols-7 gap-48 max-w-none mx-auto');
+	width: 1152px;
+	transform: scale(0.7);
+	transform-origin: top left;
+	@include screen(sm) {
+		transform: scale(0.9);
+	}
+	@include screen(lg) {
+		@include apply('relative');
+		transform: scale(1);
+	}
+}

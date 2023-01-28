@@ -76,15 +76,17 @@ layout: layouts/base.njk
 
         <div class="grid grid-cols-12">
           <div class="col-12 sm.col-7">
-            <div class="inline-flex align-items-center bg-white bg-opacity-8 mb-14 px-18 py-4 semibold text-sm radius-full color-white">
-              <span>By the makers of <a class="https://uniformcss.com" target="_blank">Uniform CSS</a></span>
+            <div class="flex justify-content-center sm.justify-content-start">
+              <div class="inline-flex align-items-center bg-white bg-opacity-8 mb-14 px-18 py-4 semibold text-sm radius-full color-white">
+                <span>By the makers of <a class="https://uniformcss.com" target="_blank">Uniform CSS</a></span>
+              </div>
             </div>
 
-            <h1 class="font-6xl sm.font-7xl md.font-8xl lg.font-9xl leading-110 extrabold mb-24 tracking-tighter color-heading">
+            <h1 class="font-6xl sm.font-7xl md.font-8xl lg.font-9xl leading-110 extrabold mb-24 tracking-tighter color-heading text-center sm.text-left">
               <span class="color-heading-accent">Open source <br class="hidden sm.inline">universal icons</span> made for modern <br class="hidden md.inline lg.hidden">UI design
             </h1>
             
-            <p class="text-lg sm.text-lg md.text-lg max-w-512 tracking-tight mb-32 sm.mb-48 color-paragraph">
+            <p class="text-lg sm.text-lg md.text-lg text-center sm.text-left mx-auto sm.mx-0 max-w-512 tracking-tight mb-32 sm.mb-48 color-paragraph">
               A fully customizable, consistently designed neutral icon library built to enhance modern websites and pixel-perfect UIs.
             </p>
             
@@ -108,10 +110,10 @@ layout: layouts/base.njk
 
   <div class="relative z-4 px-20 sm.px-32">
     <div class="max-w-896 lg.max-w-1152 mx-auto">
-      <div class="grid grid-cols-1 sm.grid-cols-2 gap-48 sm.gap-12 md.gap-24 mb-96 lg.mb-64">
+      <div class="flex flex-wrap justify-content-center sm.grid grid-cols-2 sm.grid-cols-2 gap-48 sm.gap-36 md.gap-24 mb-96 lg.mb-64">
         <div class="flex flex-col md.flex-row align-items-start gap-28">
-          <div class="flex align-items-center justify-content-center flex-none w-112 h-112 ml-n12 md.ml-0 md.w-160">
-            <img src="/assets/img/hero-explorer.svg" class="w-144 relative top-10">
+          <div class="flex align-items-center justify-content-center flex-none w-112 h-112 ml-n16 md.ml-0 md.w-160">
+            <img src="/assets/img/hero-explorer.svg" class="w-144 md.w-auto lg.w-auto relative top-10">
           </div>
           <div>
             {# <div class="inline-block radius-full flex align-items-center justify-content-center mb-12 px-6 py-4 border-1 border-teal-400 text-2xs leading-100 bold tracking-loose color-teal-200 bg-teal-400 bg-opacity-40">NEW</div> #}
@@ -121,8 +123,8 @@ layout: layouts/base.njk
           </div>
         </div>
         <div class="flex flex-col md.flex-row align-items-start gap-28 md.gap-10">
-          <div class="flex align-items-center justify-content-center flex-none w-112 h-112 ml-n12 sm.ml-0 sm.w-80 md.w-160">
-            <img src="/assets/img/hero-figma.svg" class="w-96 sm.w-80 md.w-auto relative top-10">
+          <div class="flex align-items-center justify-content-center flex-none w-112 h-112 ml-n16 sm.ml-0 sm.w-80 md.w-160">
+            <img src="/assets/img/hero-figma.svg" class="w-80 sm.w-80 md.w-auto lg.w-auto relative top-10">
           </div>
           <div>
             {# <div class="inline-block radius-full flex align-items-center justify-content-center mb-12 px-6 py-4 border-1 border-yellow-400 text-2xs leading-100 bold tracking-loose color-yellow-200 bg-yellow-400 bg-opacity-40">PRO</div> #}
@@ -216,10 +218,10 @@ layout: layouts/base.njk
 
 <section class="gsap-section-1">
   <div class="px-0 md.px-32">
-    <div class="max-w-896 lg.max-w-1152 mx-auto relative grid grid-cols-1 md.grid-cols-2 gap-72 sm.gap-96 lg.gap-160 py-112 md.py-0">
+    <div class="md.max-w-896 lg.max-w-1152 mx-auto relative grid grid-cols-1 md.grid-cols-2 gap-72 sm.gap-96 lg.gap-160 py-112 md.py-0">
       <div class="px-32 md.px-0 md.py-112">
-        <h3 class="color-heading text-3xl leading-110 mb-24 bold"><span class="color-heading-accent">Clean and precisely drawn</span> <br class="hidden sm.inline">for timeless neutrality</h3>
-        <p class="color-paragraph text-md mb-72">All our icon elements are based on a consistent 48x48 pixel grid and layers are carefully sized and positioned to ensure every icon looks neutral, beautiful, and timeless.</p>
+        <h3 class="color-heading text-3xl leading-110 mb-24 bold text-left sm.text-center md.text-left"><span class="color-heading-accent">Clean and precisely drawn</span> <br class="hidden sm.inline">for timeless neutrality</h3>
+        <p class="color-paragraph max-w-768 mx-auto text-md text-left sm.text-center md.text-left mb-72">All our icon elements are based on a consistent 48x48 pixel grid and layers are carefully sized and positioned to ensure every icon looks neutral, beautiful, and timeless.</p>
         <img src="/assets/img/clean-precise.svg" class="max-w-256 mx-auto">
       </div>
 
@@ -245,9 +247,9 @@ layout: layouts/base.njk
       </div>
 
       <div class="px-32 md.px-0 md.py-112">
-        <h3 class="color-heading text-3xl leading-110 mb-24 bold"><span class="color-heading-accent">Corner smoothing</span> <br class="hidden lg.inline">attention to every detail</h3>
-        <p class="color-paragraph text-md mb-12">We care about the tiniest details. We've enabled corner smoothing for more natural curvature and all our SVG outputs are cleaned up for optimal fidelity and file size.</p>
-        <img src="/assets/img/corner-smoothing.svg" class="w-100p max-w-512 md.max-w-100p mx-auto">
+        <h3 class="color-heading text-3xl leading-110 mb-24 bold text-left sm.text-center md.text-left"><span class="color-heading-accent">Corner smoothing</span> <br class="hidden sm.inline">attention to every detail</h3>
+        <p class="color-paragraph max-w-768 mx-auto text-md text-left sm.text-center md.text-left mb-72">We care about the tiniest details. We've enabled corner smoothing for more natural curvature and all our SVG outputs are cleaned up for optimal fidelity and file size.</p>
+        <img src="/assets/img/corner-smoothing.svg" class="mx-auto mt-n56">
       </div>
     </div>
 
@@ -280,7 +282,7 @@ layout: layouts/base.njk
         
         <p class="text-lg sm.text-lg md.text-lg max-w-640 tracking-tight mb-72 color-paragraph">
           <span class="mr-4">We've meticulously refined every detail whilst also providing a complete range of styles and customizability so that your UI will look amazing regardless of project.</span> <a href="/docs/overview" class="color-white hover.color-opacity-80 transition-100 bold inline-flex align-items-center">
-            View icon explorer <ion-icon name="arrow-forward" class="w-18 h-18 ml-4"></ion-icon>
+            View icon explorer <ion-icon name="arrow-forward" class="w-18 h-18 ml-4 color-yellow-200"></ion-icon>
           </a>
         </p>
         
@@ -290,9 +292,9 @@ layout: layouts/base.njk
           </a>
         </div> #}
 
-        <div class="grid grid-cols-1 sm.grid-cols-2 lg.grid-cols-7 gap-48 max-w-384 sm.max-w-none mx-auto">
-          <div class="col-1 lg.col-2 align-items-start grid grid-cols-1 gap-48">
-            <div class="grid grid-cols-1 gap-48">
+        <div class="ui-showcase">
+          <div class="ui-grid">
+            <div class="col-2 grid grid-cols-1 gap-48">
               <div>
                 {% include "partials/ui/calendar.njk" %}
               </div>
@@ -302,15 +304,8 @@ layout: layouts/base.njk
               <div>
                 {% include "partials/ui/sign-in.njk" %}
               </div>
-              
-              <div class="lg.hidden">
-                {% include "partials/ui/player.njk" %}
-              </div>
-              
             </div>
-          </div>
-          <div class="col-1 lg.col-3 align-items-start">
-            <div class="grid grid-cols-1 gap-48">
+            <div class="col-3 grid grid-cols-1 gap-48">
               <div>
                 {% include "partials/ui/ecommerce.njk" %}
               </div>
@@ -360,13 +355,13 @@ layout: layouts/base.njk
                 </div>
               </div>
               
-              <div class="grid grid-cols-1 md.grid-cols-8 gap-48">
-                <div class="col-1 md.col-5">
+              <div class="grid grid-cols-8 gap-48">
+                <div class="col-5">
                   <div>
                     {% include "partials/ui/pop-up.njk" %}
                   </div>
                 </div>
-                <div class="col-1 md.col-3">
+                <div class="col-3">
                   <div class="grid grid-cols-1 gap-32">
                     <div class="flex align-items-center border-1 border-cool-gray-200 hover.border-cool-gray-200 shadow-2xs hover.shadow-xs radius-md overflow-hidden transition-200 w-100p">
                       <button class="inline-flex align-items-center justify-content-center bg-white hover.bg-cool-gray-100 border-r-1 last.border-r-0 border-cool-gray-200 shadow-2xs hover.shadow-xs color-cool-gray-700 transition-200 text-xs color-white semibold space-nowrap w-100p h-40">
@@ -411,19 +406,15 @@ layout: layouts/base.njk
 
                 </div>
               </div>
-
-              <div class="lg.hidden">
-                {% include "partials/ui/activity.njk" %}
-              </div>
             </div>
-          </div>
-          <div class="hidden lg.block col-1 lg.col-2">
-            <div class="grid grid-cols-1 gap-48">
-              <div>
-                {% include "partials/ui/player.njk" %}
-              </div>
-              <div>
-                {% include "partials/ui/activity.njk" %}
+            <div class="block col-2">
+              <div class="grid grid-cols-1 gap-48">
+                <div>
+                  {% include "partials/ui/player.njk" %}
+                </div>
+                <div>
+                  {% include "partials/ui/activity.njk" %}
+                </div>
               </div>
             </div>
           </div>
@@ -465,14 +456,14 @@ layout: layouts/base.njk
           <li class="md.bg-linear radius-2xl overflow-hidden p-2" style="--linear-gradient: 180deg, #FFA7A7 0%, #4F0E60 50%;">
             <img src="/assets/img/features-01.png" class="" style="border-radius: 22px;">
             <div class="mt-20 sm.mt-0 sm.p-24">
-              <h3 class="color-heading text-lg leading-130 mb-10 bold"><span class="color-heading-accent">Professional grade</span> <br>icon library set</h3>
+              <h3 class="color-heading text-md sm.text-lg leading-130 mb-10 bold"><span class="color-heading-accent">Professional grade</span> <br>icon library set</h3>
               <p class="color-paragraph text-sm leading-160">Designed to support small and large applications and teams.</p>
             </div>
           </li>
           <li class="md.bg-linear radius-2xl overflow-hidden p-2" style="--linear-gradient: 180deg, #FFA7A7 0%, #4F0E60 50%;">
             <img src="/assets/img/features-02.png" class="" style="border-radius: 22px;">
             <div class="mt-20 sm.mt-0 sm.p-24">
-              <h3 class="color-heading text-lg leading-130 mb-10 bold"><span class="color-heading-accent">Fully open source</span> <br>with continuous support</h3>
+              <h3 class="color-heading text-md sm.text-lg leading-130 mb-10 bold"><span class="color-heading-accent">Fully open source</span> <br>with continuous support</h3>
               
               <p class="color-paragraph text-sm leading-160">Icon are always updated to ensure they stay relevant.</p>
             </div>
@@ -480,7 +471,7 @@ layout: layouts/base.njk
           <li class="md.bg-linear radius-2xl overflow-hidden p-2" style="--linear-gradient: 180deg, #FFA7A7 0%, #4F0E60 50%;">
             <img src="/assets/img/features-03.png" class="" style="border-radius: 22px;">
             <div class="mt-20 sm.mt-0 sm.p-24">
-              <h3 class="color-heading text-lg leading-130 mb-10 bold"><span class="color-heading-accent">Customizable</span> stroke <br>widths and roundness</h3>
+              <h3 class="color-heading text-md sm.text-lg leading-130 mb-10 bold"><span class="color-heading-accent">Customizable</span> stroke <br>widths and roundness</h3>
               
               <p class="color-paragraph text-sm leading-160">Refine by changing stroke widths and corner roundness.</p>
             </div>
@@ -488,35 +479,35 @@ layout: layouts/base.njk
           <li class="md.bg-linear radius-2xl overflow-hidden p-2" style="--linear-gradient: 180deg, #FFA7A7 0%, #4F0E60 50%;">
             <img src="/assets/img/features-04.png" class="" style="border-radius: 22px;">
             <div class="mt-20 sm.mt-0 sm.p-24">
-              <h3 class="color-heading text-lg leading-130 mb-10 bold"><span class="color-heading-accent">Optimized</span> for clean <br>SVG outputs</h3>
+              <h3 class="color-heading text-md sm.text-lg leading-130 mb-10 bold"><span class="color-heading-accent">Optimized</span> for clean <br>SVG outputs</h3>
               <p class="color-paragraph text-sm leading-160">SVG outputs are cleaned up for optimal fidelity and file size.</p>
             </div>
           </li>
           <li class="md.bg-linear radius-2xl overflow-hidden p-2" style="--linear-gradient: 180deg, #FFA7A7 0%, #4F0E60 50%;">
             <img src="/assets/img/features-05.png" class="" style="border-radius: 22px;">
             <div class="mt-20 sm.mt-0 sm.p-24">
-              <h3 class="color-heading text-lg leading-130 mb-10 bold"><span class="color-heading-accent">5x custom styles</span> <br>for max. flexibility</h3>
+              <h3 class="color-heading text-md sm.text-lg leading-130 mb-10 bold"><span class="color-heading-accent">5x custom styles</span> <br>for max. flexibility</h3>
               <p class="color-paragraph text-sm leading-160">Choose between line, duo-line duo-tone, duo-fill, and solid.</p>
             </div>
           </li>
           <li class="md.bg-linear radius-2xl overflow-hidden p-2" style="--linear-gradient: 180deg, #FFA7A7 0%, #4F0E60 50%;">
             <img src="/assets/img/features-06.png" class="" style="border-radius: 22px;">
             <div class="mt-20 sm.mt-0 sm.p-24">
-              <h3 class="color-heading text-lg leading-130 mb-10 bold"><span class="color-heading-accent">24x24 Grid</span> for <br>refined consistency</h3>
+              <h3 class="color-heading text-md sm.text-lg leading-130 mb-10 bold"><span class="color-heading-accent">24x24 Grid</span> for <br>refined consistency</h3>
               <p class="color-paragraph text-sm leading-160">Our custom grids help ensure consistency and precision.</p>
             </div>
           </li>
           <li class="md.bg-linear radius-2xl overflow-hidden p-2" style="--linear-gradient: 180deg, #FFA7A7 0%, #4F0E60 50%;">
             <img src="/assets/img/features-07.png" class="" style="border-radius: 22px;">
             <div class="mt-20 sm.mt-0 sm.p-24">
-              <h3 class="color-heading text-lg leading-130 mb-10 bold"><span class="color-heading-accent">Looks amazing</span> on <br>all modern displays</h3>
+              <h3 class="color-heading text-md sm.text-lg leading-130 mb-10 bold"><span class="color-heading-accent">Looks amazing</span> on <br>all modern displays</h3>
               <p class="color-paragraph text-sm leading-160">Crafted with modern UI, apps, and websites in mind.</p>
             </div>
           </li>
           <li class="md.bg-linear radius-2xl overflow-hidden p-2" style="--linear-gradient: 180deg, #FFA7A7 0%, #4F0E60 50%;">
             <img src="/assets/img/features-08.png" class="" style="border-radius: 22px;">
             <div class="mt-20 sm.mt-0 sm.p-24">
-              <h3 class="color-heading text-lg leading-130 mb-10 bold"><span class="color-heading-accent">Figma template</span> to <br>boost your workflow</h3>
+              <h3 class="color-heading text-md sm.text-lg leading-130 mb-10 bold"><span class="color-heading-accent">Figma template</span> to <br>boost your workflow</h3>
               <p class="color-paragraph text-sm leading-160">Get access to the entire icon library directly in your Figma.</p>
             </div>
           </li>
