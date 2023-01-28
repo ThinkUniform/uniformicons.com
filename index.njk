@@ -22,16 +22,13 @@ layout: layouts/base.njk
 
           <div class="hidden sm.flex align-items-center justify-content-end gutter-x-24">
             <a class="text-sm medium color-pink-200 color-opacity-80 hover.color-opacity-100">
-              Get started
+              Find icons
             </a>
             <a class="text-sm medium color-pink-200 color-opacity-80 hover.color-opacity-100">
-              Appendix
+              Request an icon
             </a>
             <a class="text-sm medium color-pink-200 color-opacity-80 hover.color-opacity-100">
               Docs
-            </a>
-            <a class="text-sm medium color-pink-200 color-opacity-80 hover.color-opacity-100">
-              Cheatsheet
             </a>
             <a class="flex align-items-center medium color-white hover.color-white">
               <ion-icon name="logo-github" class="w-28 h-28"></ion-icon>
@@ -42,11 +39,11 @@ layout: layouts/base.njk
             <a class="flex align-items-center medium color-white hover.color-white">
               <ion-icon name="logo-github" class="w-28 h-28"></ion-icon>
             </a>
-            <button class="h-32 flex md.hidden flex-col gap-4 align-items-center justify-content-center" @click="dialogs.mobileNav = true">
+            {# <button class="h-32 flex md.hidden flex-col gap-4 align-items-center justify-content-center" @click="dialogs.mobileNav = true">
               <div class="h-2 w-20 bg-pink-300"></div>
               <div class="h-2 w-20 bg-pink-300"></div>
               <div class="h-2 w-20 bg-pink-300"></div>
-            </button>
+            </button> #}
           </div>
 
           
@@ -91,12 +88,12 @@ layout: layouts/base.njk
             </p>
             
             <div class="flex flex-col sm.flex-row gap-20 mb-72">
-              <a href="/docs/overview" class="inline-flex align-items-center justify-content-center h-40 px-16 color-black bg-yellow-300 hover.bg-yellow-400 transition-100 radius-md semibold text-md">
-                Download icons
+              <a href="/explorer" class="inline-flex align-items-center justify-content-center h-40 px-16 color-black bg-yellow-300 hover.bg-yellow-400 transition-100 radius-md semibold text-md">
+                View icon explorer
               </a>
               <span class="inline-flex align-items-center justify-content-center color-white color-opacity-40">or</span>
-              <a href="/docs/overview" class="inline-flex align-items-center justify-content-center color-white transition-100 radius-md semibold text-md">
-                View icon explorer
+              <a href="#" class="inline-flex align-items-center justify-content-center color-white transition-100 radius-md semibold text-md">
+                <span>Download latest <span class="regular color-white color-opacity-60">v0.1.0</span></span>
               </a>
             </div>
           </div>
@@ -119,7 +116,7 @@ layout: layouts/base.njk
             {# <div class="inline-block radius-full flex align-items-center justify-content-center mb-12 px-6 py-4 border-1 border-teal-400 text-2xs leading-100 bold tracking-loose color-teal-200 bg-teal-400 bg-opacity-40">NEW</div> #}
             <h3 class="color-heading text-xl leading-120 mb-12 bold"><span class="color-heading-accent">Customize and search</span> <br class="hidden sm.inline"> our entire icon library</h3>
             <p class="color-paragraph text-md mb-16 max-w-448">Select your style and find the perfect icon neatly displayed using our new icon explorer.</p>
-            <a class="text-md bold color-white">View icon explorer</a>
+            <a class="text-md bold color-white">View icon explorer <ion-icon name="arrow-forward" class="w-18 h-18 ml-4 color-yellow-300"></ion-icon></a>
           </div>
         </div>
         <div class="flex flex-col md.flex-row align-items-start gap-28 md.gap-10">
@@ -551,7 +548,7 @@ layout: layouts/base.njk
 
       <div class="glowing-divider mb-112"></div>
 
-      <h1 class="text-6xl bold text-center color-heading mb-48">
+      <h1 class="text-6xl bold text-center color-heading-accent mb-48">
         Frequently asked questions
       </h1>
 

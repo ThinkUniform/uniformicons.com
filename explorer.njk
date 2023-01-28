@@ -3,11 +3,12 @@ title: Lightning Fast Utility Generator for Sass
 layout: layouts/base.njk
 ---
 
+{% include "partials/modals/icon-controls.njk" %}
 
-<div class="flex h-100p overflow-hidden">
-  <aside class="relative flex-none sticky top-0 md.w-320 md.h-100vh overflow-hidden md.overflow-auto bg-background z-1 border-b-2 md.border-b-0 border-heading-accent">
-    <div class="relative z-1 px-20 py-20 md.px-24 md.py-28">
-      <div class="flex md.flex-col align-items-center md.align-items-start justify-content-between md.mb-32">
+<div class="flex flex-wrap h-100p overflow-hidden">
+  <aside class="relative flex-none sticky top-0 w-100p sm.w-320 sm.h-100vh overflow-hidden sm.overflow-auto bg-background z-1 border-b-2 sm.border-b-0 border-heading-accent">
+    <div class="relative z-1 px-20 py-20 sm.px-24 sm.py-28">
+      <div class="flex sm.flex-col align-items-center sm.align-items-start justify-content-between mb-24 sm.mb-32">
         
         <div class="flex align-items-center justify-content-between w-100p">
           <div class="flex align-items-center">
@@ -18,17 +19,17 @@ layout: layouts/base.njk
               </span>
             </a>
           </div>
-          <a href="https://github.com/ThinkUniform/uniformcss" class="hidden md.flex align-items-center text-md leading-100 color-white color-opacity-100 hover.color-opacity-70">
+          <a href="https://github.com/ThinkUniform/uniformcss" class="hidden sm.flex align-items-center text-md leading-100 color-white color-opacity-100 hover.color-opacity-70">
             <ion-icon name="logo-github" class="w-24 h-24"></ion-icon>
           </a>
         </div>
 
-        <div class="flex align-items-center md.w-100p gap-20">
+        <div class="flex align-items-center sm.w-100p gap-20">
           <button class="flex-1 js-docsearch"></button>
-          <a href="https://github.com/ThinkUniform/uniformcss" class="md.hidden flex align-items-center text-md leading-100 color-white color-opacity-100">
+          <a href="https://github.com/ThinkUniform/uniformcss" class="sm.hidden flex align-items-center text-md leading-100 color-white color-opacity-100">
             <ion-icon name="logo-github" class="w-24 h-24"></ion-icon>
           </a>
-          <button class="h-32 flex md.hidden flex-col gap-4 align-items-center justify-content-center" @click="dialogs.mobileNav = true">
+          <button class="h-32 flex sm.hidden flex-col gap-4 align-items-center justify-content-center" @click="dialogs.iconControls = true">
             <div class="h-2 w-20 bg-pink-300"></div>
             <div class="h-2 w-20 bg-pink-300"></div>
             <div class="h-2 w-20 bg-pink-300"></div>
@@ -37,12 +38,20 @@ layout: layouts/base.njk
 
       </div>
 
+      <div class="block sm.hidden">
+        <div class="relative">
+          <div class="absolute top-0 left-0 pointer-events-none flex align-items-center justify-content-center w-40 h-40 color-white">
+            <svg class="fill-current w-18 h-18" xmlns="http://www.w3.org/2000/svg" class="ionicon" viewBox="0 0 512 512"><title>Search</title><path d="M456.69 421.39L362.6 327.3a173.81 173.81 0 0034.84-104.58C397.44 126.38 319.06 48 222.72 48S48 126.38 48 222.72s78.38 174.72 174.72 174.72A173.81 173.81 0 00327.3 362.6l94.09 94.09a25 25 0 0035.3-35.3zM97.92 222.72a124.8 124.8 0 11124.8 124.8 124.95 124.95 0 01-124.8-124.8z"/></svg>
+          </div>
+          <input type="text" class="flex align-items-center h-40 pl-40 border-1 color-white color-opacity-80 text-sm border-pink-300 radius-md bg-black bg-opacity-40 appearance-none" placeholder="Search by keyword" x-model="searchTerm" @input="filterIcons()">
+        </div>
+      </div>
+
       
 
 
-      <div class="hidden md.block">
+      <div class="hidden sm.block">
         <div class="relative mb-32">
-
           <div class="absolute top-0 left-0 pointer-events-none flex align-items-center justify-content-center w-40 h-40 color-white">
             <svg class="fill-current w-18 h-18" xmlns="http://www.w3.org/2000/svg" class="ionicon" viewBox="0 0 512 512"><title>Search</title><path d="M456.69 421.39L362.6 327.3a173.81 173.81 0 0034.84-104.58C397.44 126.38 319.06 48 222.72 48S48 126.38 48 222.72s78.38 174.72 174.72 174.72A173.81 173.81 0 00327.3 362.6l94.09 94.09a25 25 0 0035.3-35.3zM97.92 222.72a124.8 124.8 0 11124.8 124.8 124.95 124.95 0 01-124.8-124.8z"/></svg>
           </div>
@@ -87,7 +96,7 @@ layout: layouts/base.njk
                     Line
                   </div>
                   <div x-show="iconSettings.styles.line">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="fill-current w-20 h-20 color-pink-400" viewBox="0 0 512 512"><title>Checkmark Circle</title><path d="M256 48C141.31 48 48 141.31 48 256s93.31 208 208 208 208-93.31 208-208S370.69 48 256 48zm-38 312.38l-80.6-89.57 23.79-21.41 56 62.22L350 153.46 374.54 174z" /></svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" class="fill-current w-20 h-20 color-heading-accent" viewBox="0 0 512 512"><title>Checkmark Circle</title><path d="M256 48C141.31 48 48 141.31 48 256s93.31 208 208 208 208-93.31 208-208S370.69 48 256 48zm-38 312.38l-80.6-89.57 23.79-21.41 56 62.22L350 153.46 374.54 174z" /></svg>
                   </div>
                   </button>
                 </li>
@@ -102,7 +111,7 @@ layout: layouts/base.njk
                     Duo-line
                   </div>
                   <div x-show="iconSettings.styles.duoLine">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="fill-current w-20 h-20 color-pink-400" viewBox="0 0 512 512"><title>Checkmark Circle</title><path d="M256 48C141.31 48 48 141.31 48 256s93.31 208 208 208 208-93.31 208-208S370.69 48 256 48zm-38 312.38l-80.6-89.57 23.79-21.41 56 62.22L350 153.46 374.54 174z" /></svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" class="fill-current w-20 h-20 color-heading-accent" viewBox="0 0 512 512"><title>Checkmark Circle</title><path d="M256 48C141.31 48 48 141.31 48 256s93.31 208 208 208 208-93.31 208-208S370.69 48 256 48zm-38 312.38l-80.6-89.57 23.79-21.41 56 62.22L350 153.46 374.54 174z" /></svg>
                   </div>
                   </button>
                 </li>
@@ -118,7 +127,7 @@ layout: layouts/base.njk
                     Duo-tone
                   </div>
                   <div x-show="iconSettings.styles.duoTone">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="fill-current w-20 h-20 color-pink-400" viewBox="0 0 512 512"><title>Checkmark Circle</title><path d="M256 48C141.31 48 48 141.31 48 256s93.31 208 208 208 208-93.31 208-208S370.69 48 256 48zm-38 312.38l-80.6-89.57 23.79-21.41 56 62.22L350 153.46 374.54 174z" /></svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" class="fill-current w-20 h-20 color-heading-accent" viewBox="0 0 512 512"><title>Checkmark Circle</title><path d="M256 48C141.31 48 48 141.31 48 256s93.31 208 208 208 208-93.31 208-208S370.69 48 256 48zm-38 312.38l-80.6-89.57 23.79-21.41 56 62.22L350 153.46 374.54 174z" /></svg>
                   </div>
                 </button>
               </li>
@@ -133,7 +142,7 @@ layout: layouts/base.njk
                     Duo-fill
                   </div>
                   <div x-show="iconSettings.styles.duoFill">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="fill-current w-20 h-20 color-pink-400" viewBox="0 0 512 512"><title>Checkmark Circle</title><path d="M256 48C141.31 48 48 141.31 48 256s93.31 208 208 208 208-93.31 208-208S370.69 48 256 48zm-38 312.38l-80.6-89.57 23.79-21.41 56 62.22L350 153.46 374.54 174z" /></svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" class="fill-current w-20 h-20 color-heading-accent" viewBox="0 0 512 512"><title>Checkmark Circle</title><path d="M256 48C141.31 48 48 141.31 48 256s93.31 208 208 208 208-93.31 208-208S370.69 48 256 48zm-38 312.38l-80.6-89.57 23.79-21.41 56 62.22L350 153.46 374.54 174z" /></svg>
                   </div>
                 </button>
               </li>
@@ -148,7 +157,7 @@ layout: layouts/base.njk
                     Solid
                   </div>
                   <div x-show="iconSettings.styles.solid">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="fill-current w-20 h-20 color-pink-400" viewBox="0 0 512 512"><title>Checkmark Circle</title><path d="M256 48C141.31 48 48 141.31 48 256s93.31 208 208 208 208-93.31 208-208S370.69 48 256 48zm-38 312.38l-80.6-89.57 23.79-21.41 56 62.22L350 153.46 374.54 174z" /></svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" class="fill-current w-20 h-20 color-heading-accent" viewBox="0 0 512 512"><title>Checkmark Circle</title><path d="M256 48C141.31 48 48 141.31 48 256s93.31 208 208 208 208-93.31 208-208S370.69 48 256 48zm-38 312.38l-80.6-89.57 23.79-21.41 56 62.22L350 153.46 374.54 174z" /></svg>
                   </div>
                 </button>
               </li>
@@ -156,14 +165,14 @@ layout: layouts/base.njk
           </li>
 
           <li>
-            <h5 class="text-2xs leading-100 bold uppercase tracking-loose color-white">
+            <h5 class="text-2xs leading-100 bold uppercase tracking-loose color-white mb-12">
               Corner Radius • <span class="color-heading-accent"><span x-text="iconSettings.cornerRadius"></span>PX <span x-show="iconSettings.cornerRadius == 0">(Sharp)</span><span x-show="iconSettings.cornerRadius == 4">(Default)</span></span>
             </h5>
             <input type="range" min="0" max="2" value="4" class="slider w-100p h-2 bg-white bg-opacity-30 radius-lg appearance-none cursor-pointer" x-model="iconSettings.cornerRadiusSliderValue" @input="changeCornerRadius($event)">
           </li>
 
           <li>
-            <h5 class="text-2xs leading-100 bold uppercase tracking-loose color-white">
+            <h5 class="text-2xs leading-100 bold uppercase tracking-loose color-white mb-12">
               Stroke Width • <span class="color-heading-accent"><span x-text="iconSettings.strokeWidth"></span>PX <span x-show="iconSettings.strokeWidth == 2">(Default)</span></span>
             </h5>
             <input type="range" min="0" max="20" value="10" class="slider w-100p h-2 bg-white bg-opacity-30 radius-lg appearance-none cursor-pointer" x-model="iconSettings.strokeWidthSliderValue" @input="changeStrokeWidth($event)">
@@ -180,7 +189,7 @@ layout: layouts/base.njk
 
 
     </div>
-    <div class="md.hidden absolute z-2 top-0 left-0 pointer-events-none w-100vw md.w-320 h-100vh overflow-hidden" style="mix-blend-mode: overlay">
+    <div class="sm.hidden absolute z-2 top-0 left-0 pointer-events-none w-100vw sm.w-320 h-100vh overflow-hidden" style="mix-blend-mode: overlay">
       <div class="glass-keylight is-docs">
         <div class="glass-keylight-outer">
           <div class="glass-keylight-inner">
@@ -190,7 +199,7 @@ layout: layouts/base.njk
     </div>
   </aside>
 
-  <div class="hidden md.block fixed z-2 top-0 left-0 pointer-events-none w-320 h-100vh overflow-hidden" style="mix-blend-mode: overlay">
+  <div class="hidden sm.block fixed z-2 top-0 left-0 pointer-events-none w-320 h-100vh overflow-hidden" style="mix-blend-mode: overlay">
     <div class="glass-keylight is-docs">
       <div class="glass-keylight-outer">
         <div class="glass-keylight-inner">
@@ -199,7 +208,7 @@ layout: layouts/base.njk
     </div>
   </div>
 
-  <div class="flex-1 gap-48 md.border-l-2 border-heading-accent color-white">
+  <div class="flex-1 gap-48 sm.border-l-2 border-heading-accent color-white">
     <ul class="explorer-grid" :class="explorerSettings.gridSize">
 
 

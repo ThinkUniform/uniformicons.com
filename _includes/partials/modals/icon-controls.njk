@@ -1,0 +1,157 @@
+<div 
+  class="fixed top-0 left-0 w-100p h-100vh bg-black bg-opacity-40 z-9"
+  x-cloak
+  x-show="dialogs.iconControls"
+  x-transition:enter="duration-200"
+  x-transition:enter-start="opacity-0"
+  x-transition:enter-end="opacity-100"
+  @click="dialogs.iconControls = false"
+>
+</div>
+
+<div 
+  class="flex fixed top-0 right-0 w-320 z-9 bg-background"
+  x-cloak
+  x-transition:enter="duration-300"
+  x-transition:enter-start="opacity-0"
+  x-transition:enter-end="opacity-100"
+  x-show="dialogs.iconControls"
+  x-transition:enter="duration-200 delay-100 transform"
+  x-transition:enter-start="opacity-0 translate-x-192"
+  x-transition:enter-end="opacity-100 translate-x-0"
+>
+  <div class="relative w-100p h-100vh p-20 overflow-auto">
+    <div class="absolute top-0 right-0 m-16">
+      <button class="w-32 h-32 flex align-items-center justify-content-center" @click="dialogs.iconControls = false">
+        <ion-icon name="close" class="w-24 h-24 color-pink-300"></ion-icon>
+      </button>
+    </div>
+
+    <div class="pt-16">
+      
+
+      <h3 class="bold text-md color-heading-accent mb-12">Choose your flavor</h3>
+      <p class="color-paragraph text-sm mb-28">
+        Customize the controls below to pick and choose your ideal icon style.
+      </p>
+
+      <ul class="gutter-y-32 mt-32">
+        <li>
+          <label class="block text-2xs color-white extrabold tracking-loose uppercase mb-6">Grid Size</label>
+          <div class="grid grid-cols-4 gap-6 p-6 radius-md bg-white bg-opacity-10">
+            <button class="flex align-items-center justify-content-center h-32 text-xs tracking-loose bold radius-sm py-4" :class="explorerSettings.gridSize == 'is-xs' ? 'bg-heading-accent color-black' : 'color-white hover.bg-pink-200 hover.bg-opacity-10'" @click="explorerSettings.gridSize = 'is-xs'">
+              XS
+            </button>
+            <button class="flex align-items-center justify-content-center h-32 text-xs tracking-loose bold radius-sm py-4" :class="explorerSettings.gridSize == 'is-sm' ? 'bg-heading-accent color-black' : 'color-white hover.bg-pink-200 hover.bg-opacity-10'" @click="explorerSettings.gridSize = 'is-sm'">
+              SM
+            </button>
+            <button class="flex align-items-center justify-content-center h-32 text-xs tracking-loose bold radius-sm py-4" :class="explorerSettings.gridSize == 'is-md' ? 'bg-heading-accent color-black' : 'color-white hover.bg-pink-200 hover.bg-opacity-10'" @click="explorerSettings.gridSize = 'is-md'">
+              MD
+            </button>
+            <button class="flex align-items-center justify-content-center h-32 text-xs tracking-loose bold radius-sm py-4" :class="explorerSettings.gridSize == 'is-lg' ? 'bg-heading-accent color-black' : 'color-white hover.bg-pink-200 hover.bg-opacity-10'" @click="explorerSettings.gridSize = 'is-lg'">
+              LG
+            </button>
+          </div>
+        </li>
+
+        <li>
+          <label class="block text-2xs color-white extrabold tracking-loose uppercase mb-6">Style</label>
+          <ul class="gutter-y-4">
+            <li class="">
+              <button class="flex align-items-center justify-content-between w-100p px-12 py-10 text-sm semibold radius-md transition-200" :class="iconSettings.styles.line ? 'color-white bg-white bg-opacity-8' : 'color-pink-400 hover.color-pink-300 bg-white bg-opacity-0 hover.bg-opacity-4'" @click="iconSettings.styles.line = !iconSettings.styles.line">
+                <div class="flex align-items-center">
+                  <svg class="mr-10" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M21 9L21 3H15" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                  <path d="M10 3H7.8C6.11984 3 5.27976 3 4.63803 3.32698C4.07354 3.6146 3.6146 4.07354 3.32698 4.63803C3 5.27976 3 6.11984 3 7.8V16.2C3 17.8802 3 18.7202 3.32698 19.362C3.6146 19.9265 4.07354 20.3854 4.63803 20.673C5.27976 21 6.11984 21 7.8 21H16.2C17.8802 21 18.7202 21 19.362 20.673C19.9265 20.3854 20.3854 19.9265 20.673 19.362C21 18.7202 21 17.8802 21 16.2V14" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                  <path d="M21 3L12 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                  Line
+                </div>
+                <div x-show="iconSettings.styles.line">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="fill-current w-20 h-20 color-heading-accent" viewBox="0 0 512 512"><title>Checkmark Circle</title><path d="M256 48C141.31 48 48 141.31 48 256s93.31 208 208 208 208-93.31 208-208S370.69 48 256 48zm-38 312.38l-80.6-89.57 23.79-21.41 56 62.22L350 153.46 374.54 174z" /></svg>
+                </div>
+                </button>
+              </li>
+              <li class="">
+              <button class="flex align-items-center justify-content-between w-100p px-12 py-10 text-sm semibold radius-md transition-200" :class="iconSettings.styles.duoLine ? 'color-white bg-white bg-opacity-8' : 'color-pink-400 hover.color-pink-300 bg-white bg-opacity-0 hover.bg-opacity-4'" @click="iconSettings.styles.duoLine = !iconSettings.styles.duoLine">
+                <div class="flex align-items-center">
+                  <svg class="mr-10" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path opacity="0.4" d="M10 3H7.8C6.11984 3 5.27976 3 4.63803 3.32698C4.07354 3.6146 3.6146 4.07354 3.32698 4.63803C3 5.27976 3 6.11984 3 7.8V16.2C3 17.8802 3 18.7202 3.32698 19.362C3.6146 19.9265 4.07354 20.3854 4.63803 20.673C5.27976 21 6.11984 21 7.8 21H16.2C17.8802 21 18.7202 21 19.362 20.673C19.9265 20.3854 20.3854 19.9265 20.673 19.362C21 18.7202 21 17.8802 21 16.2V14" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                  <path d="M21 9L21 3H15" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                  <path d="M21 3L12 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                  Duo-line
+                </div>
+                <div x-show="iconSettings.styles.duoLine">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="fill-current w-20 h-20 color-heading-accent" viewBox="0 0 512 512"><title>Checkmark Circle</title><path d="M256 48C141.31 48 48 141.31 48 256s93.31 208 208 208 208-93.31 208-208S370.69 48 256 48zm-38 312.38l-80.6-89.57 23.79-21.41 56 62.22L350 153.46 374.54 174z" /></svg>
+                </div>
+                </button>
+              </li>
+              <li class="">
+              <button class="flex align-items-center justify-content-between w-100p px-12 py-10 text-sm semibold radius-md transition-200" :class="iconSettings.styles.duoTone ? 'color-white bg-white bg-opacity-8' : 'color-pink-400 hover.color-pink-300 bg-white bg-opacity-0 hover.bg-opacity-4'" @click="iconSettings.styles.duoTone = !iconSettings.styles.duoTone">
+                <div class="flex align-items-center">
+                  <svg class="mr-10" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path opacity="0.2" d="M7.8 21H16.2C17.8802 21 18.7202 21 19.362 20.673C19.9265 20.3854 20.3854 19.9265 20.673 19.362C21 18.7202 21 17.8802 21 16.2V15.9882C21 15.2545 21 14.8876 20.9171 14.5423C20.8436 14.2362 20.7224 13.9436 20.5579 13.6751C20.3724 13.3724 20.113 13.113 19.5941 12.5941L19.5941 12.5941L11.4059 4.40589C10.887 3.88703 10.6276 3.6276 10.3249 3.44208C10.0564 3.27759 9.7638 3.15638 9.4577 3.08289C9.11243 3 8.74555 3 8.01178 3H7.8C6.11984 3 5.27976 3 4.63803 3.32698C4.07354 3.6146 3.6146 4.07354 3.32698 4.63803C3 5.27976 3 6.11984 3 7.8V16.2C3 17.8802 3 18.7202 3.32698 19.362C3.6146 19.9265 4.07354 20.3854 4.63803 20.673C5.27976 21 6.11984 21 7.8 21Z" fill="currentColor"/>
+                  <path d="M10 3H7.8C6.11984 3 5.27976 3 4.63803 3.32698C4.07354 3.6146 3.6146 4.07354 3.32698 4.63803C3 5.27976 3 6.11984 3 7.8V16.2C3 17.8802 3 18.7202 3.32698 19.362C3.6146 19.9265 4.07354 20.3854 4.63803 20.673C5.27976 21 6.11984 21 7.8 21H16.2C17.8802 21 18.7202 21 19.362 20.673C19.9265 20.3854 20.3854 19.9265 20.673 19.362C21 18.7202 21 17.8802 21 16.2V14" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                  <path d="M21 9L21 3H15" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                  <path d="M21 3L12 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                  Duo-tone
+                </div>
+                <div x-show="iconSettings.styles.duoTone">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="fill-current w-20 h-20 color-heading-accent" viewBox="0 0 512 512"><title>Checkmark Circle</title><path d="M256 48C141.31 48 48 141.31 48 256s93.31 208 208 208 208-93.31 208-208S370.69 48 256 48zm-38 312.38l-80.6-89.57 23.79-21.41 56 62.22L350 153.46 374.54 174z" /></svg>
+                </div>
+              </button>
+            </li>
+            <li class="">
+              <button class="flex align-items-center justify-content-between w-100p px-12 py-10 text-sm semibold radius-md transition-200" :class="iconSettings.styles.duoFill ? 'color-white bg-white bg-opacity-8' : 'color-pink-400 hover.color-pink-300 bg-white bg-opacity-0 hover.bg-opacity-4'" @click="iconSettings.styles.duoFill = !iconSettings.styles.duoFill">
+                <div class="flex align-items-center">
+                  <svg class="mr-10" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path opacity="0.4" fill-rule="evenodd" clip-rule="evenodd" d="M13.0352 7.42929C13.6292 6.83526 13.9262 6.53825 14.0375 6.19576C14.1354 5.89449 14.1354 5.56997 14.0375 5.26871C13.9262 4.92621 13.6292 4.6292 13.0352 4.03518L11.7029 2.70294C11.4435 2.44352 11.3138 2.3138 11.1624 2.22104C11.0282 2.1388 10.8819 2.07819 10.7288 2.04145C10.5562 2 10.3728 2 10.0059 2H8.4C6.15979 2 5.03969 2 4.18404 2.43597C3.43139 2.81947 2.81947 3.43139 2.43597 4.18404C2 5.03969 2 6.15979 2 8.4V15.6C2 17.8402 2 18.9603 2.43597 19.816C2.81947 20.5686 3.43139 21.1805 4.18404 21.564C5.03969 22 6.15979 22 8.4 22H15.6C17.8402 22 18.9603 22 19.816 21.564C20.5686 21.1805 21.1805 20.5686 21.564 19.816C22 18.9603 22 17.8402 22 15.6V13.9941C22 13.6272 22 13.4438 21.9586 13.2712C21.9218 13.1181 21.8612 12.9718 21.779 12.8376C21.6862 12.6862 21.5565 12.5565 21.2971 12.2971L19.9648 10.9648C19.3708 10.3708 19.0738 10.0738 18.7313 9.9625C18.43 9.86462 18.1055 9.86462 17.8042 9.9625C17.4617 10.0738 17.1647 10.3708 16.5707 10.9648L13.7678 13.7678C12.7915 14.7441 11.2085 14.7441 10.2322 13.7678C9.25592 12.7915 9.25592 11.2085 10.2322 10.2322L13.0352 7.42929Z" fill="currentColor"/>
+                  <path d="M21 9L21 3H15" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                  <path d="M21 3L12 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                  Duo-fill
+                </div>
+                <div x-show="iconSettings.styles.duoFill">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="fill-current w-20 h-20 color-heading-accent" viewBox="0 0 512 512"><title>Checkmark Circle</title><path d="M256 48C141.31 48 48 141.31 48 256s93.31 208 208 208 208-93.31 208-208S370.69 48 256 48zm-38 312.38l-80.6-89.57 23.79-21.41 56 62.22L350 153.46 374.54 174z" /></svg>
+                </div>
+              </button>
+            </li>
+            <li class="">
+              <button class="flex align-items-center justify-content-between w-100p px-12 py-10 text-sm semibold radius-md transition-200" :class="iconSettings.styles.solid ? 'color-white bg-white bg-opacity-8' : 'color-pink-400 hover.color-pink-300 bg-white bg-opacity-0 hover.bg-opacity-4'" @click="iconSettings.styles.solid = !iconSettings.styles.solid">
+                <div class="flex align-items-center">
+                  <svg class="mr-10" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path fill-rule="evenodd" clip-rule="evenodd" d="M13.0352 7.42929C13.6292 6.83526 13.9262 6.53825 14.0375 6.19576C14.1354 5.89449 14.1354 5.56997 14.0375 5.26871C13.9262 4.92621 13.6292 4.6292 13.0352 4.03518L11.7029 2.70294C11.4435 2.44352 11.3138 2.3138 11.1624 2.22104C11.0282 2.1388 10.8819 2.07819 10.7288 2.04145C10.5562 2 10.3728 2 10.0059 2H8.4C6.15979 2 5.03969 2 4.18404 2.43597C3.43139 2.81947 2.81947 3.43139 2.43597 4.18404C2 5.03969 2 6.15979 2 8.4V15.6C2 17.8402 2 18.9603 2.43597 19.816C2.81947 20.5686 3.43139 21.1805 4.18404 21.564C5.03969 22 6.15979 22 8.4 22H15.6C17.8402 22 18.9603 22 19.816 21.564C20.5686 21.1805 21.1805 20.5686 21.564 19.816C22 18.9603 22 17.8402 22 15.6V13.9941C22 13.6272 22 13.4438 21.9586 13.2712C21.9218 13.1181 21.8612 12.9718 21.779 12.8376C21.6862 12.6862 21.5565 12.5565 21.2971 12.2971L19.9648 10.9648C19.3708 10.3708 19.0738 10.0738 18.7313 9.9625C18.43 9.86462 18.1055 9.86462 17.8042 9.9625C17.4617 10.0738 17.1647 10.3708 16.5707 10.9648L13.7678 13.7678C12.7915 14.7441 11.2085 14.7441 10.2322 13.7678C9.25592 12.7915 9.25592 11.2085 10.2322 10.2322L13.0352 7.42929Z" fill="currentColor"/>
+                  <path d="M21 9L21 3H15" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                  <path d="M21 3L12 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                  Solid
+                </div>
+                <div x-show="iconSettings.styles.solid">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="fill-current w-20 h-20 color-heading-accent" viewBox="0 0 512 512"><title>Checkmark Circle</title><path d="M256 48C141.31 48 48 141.31 48 256s93.31 208 208 208 208-93.31 208-208S370.69 48 256 48zm-38 312.38l-80.6-89.57 23.79-21.41 56 62.22L350 153.46 374.54 174z" /></svg>
+                </div>
+              </button>
+            </li>
+          </ul>
+        </li>
+
+        <li>
+          <h5 class="text-2xs leading-100 bold uppercase tracking-loose color-white mb-12">
+            Corner Radius • <span class="color-heading-accent"><span x-text="iconSettings.cornerRadius"></span>PX <span x-show="iconSettings.cornerRadius == 0">(Sharp)</span><span x-show="iconSettings.cornerRadius == 4">(Default)</span></span>
+          </h5>
+          <input type="range" min="0" max="2" value="4" class="slider w-100p h-2 bg-white bg-opacity-30 radius-lg appearance-none cursor-pointer" x-model="iconSettings.cornerRadiusSliderValue" @input="changeCornerRadius($event)">
+        </li>
+
+        <li>
+          <h5 class="text-2xs leading-100 bold uppercase tracking-loose color-white mb-12">
+            Stroke Width • <span class="color-heading-accent"><span x-text="iconSettings.strokeWidth"></span>PX <span x-show="iconSettings.strokeWidth == 2">(Default)</span></span>
+          </h5>
+          <input type="range" min="0" max="20" value="10" class="slider w-100p h-2 bg-white bg-opacity-30 radius-lg appearance-none cursor-pointer" x-model="iconSettings.strokeWidthSliderValue" @input="changeStrokeWidth($event)">
+        </li>
+
+      
+      </ul>
+    </div>
+  </div>
+</div>

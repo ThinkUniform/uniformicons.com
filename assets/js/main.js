@@ -2,7 +2,9 @@
 document.addEventListener('alpine:init', () => {
   // Main
   Alpine.data('main', () => ({
-
+    dialogs: {
+      iconControls: false
+    },
     iconSettings: {
       cornerRadiusSliderValue: 2,
       cornerRadius: 4,
