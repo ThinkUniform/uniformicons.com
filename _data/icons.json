@@ -1,17 +1,17 @@
 {
   "categories": [
     {
-      "name": "Category 1",
+      "name": "Web",
       "icons": [
         {
-          "url": "https://example.com/icons/category1/icon1.svg",
-          "name": "Icon 1",
-          "keywords": ["Liberty Peace", "cat", "bird"]
+          "name": "External Link 01",
+          "url": "external-link-01.svg",
+          "keywords": ["box", "link", "hyperlink"]
         },
         {
-          "url": "https://example.com/icons/category1/icon2.svg",
-          "name": "Icon 2",
-          "keywords": ["apple", "peach", "pineapple"]
+          "name": "External Link 02",
+          "url": "external-link-02.svg",
+          "keywords": ["box", "link", "hyperlink"]
         }
       ]
     },
@@ -19,13 +19,13 @@
       "name": "Category 2",
       "icons": [
         {
-          "url": "https://example.com/icons/category2/icon3.svg",
           "name": "Icon 3",
+          "url": "icon_3.svg",
           "keywords": ["keyword7", "keyword8", "keyword9"]
         },
         {
-          "url": "https://example.com/icons/category2/icon4.svg",
           "name": "Icon 4",
+          "url": "icon_4.svg",
           "keywords": ["keyword10", "keyword11", "keyword12"]
         }
       ]

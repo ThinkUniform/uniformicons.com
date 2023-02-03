@@ -229,17 +229,12 @@ layout: layouts/base.njk
         {%- for icon in category.icons -%}
           <li class="grid-icon" alt="{{ icon.name }}" data-keywords="{{ icon.keywords }}" x-show="iconSettings.styles.line">
             <button>
-              <img src="/assets/img/icons/line/link-external-01.svg" onload="SVGInject(this)">
+              <img src="/assets/icons/line/{{ icon.url }}" onload="SVGInject(this)">
             </button>
           </li>
-          <li class="grid-icon" alt="{{ icon.name }}" data-keywords="{{ icon.keywords }}" x-show="iconSettings.styles.duoLine">
+          <li class="grid-icon" alt="{{ icon.name }}" data-keywords="{{ icon.keywords }}" x-show="iconSettings.styles.solid">
             <button>
-              <img src="/assets/img/icons/line/link-external-01.svg" onload="SVGInject(this)">
-            </button>
-          </li>
-          <li class="grid-icon" alt="{{ icon.name }}" data-keywords="{{ icon.keywords }}" x-show="iconSettings.styles.duoTone">
-            <button>
-              <img src="/assets/img/icons/line/link-external-01.svg" onload="SVGInject(this)">
+              <img src="/assets/icons/solid/{{ icon.url }}" onload="SVGInject(this)">
             </button>
           </li>
         {%- endfor -%}

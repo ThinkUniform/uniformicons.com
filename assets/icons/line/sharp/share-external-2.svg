@@ -1,0 +1,26 @@
+<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g clip-path="url(#clip0_790_16564)">
+<rect width="24" height="24" fill="#888888" fill-opacity="0.1"/>
+<g opacity="0.2">
+<circle cx="12" cy="12" r="11" stroke="#FF0000" stroke-width="0.04"/>
+<circle cx="12" cy="12" r="8" stroke="#FF0000" stroke-width="0.04"/>
+<circle cx="12" cy="12" r="5" stroke="#FF0000" stroke-width="0.04"/>
+<circle cx="12" cy="12" r="2" stroke="#FF0000" stroke-width="0.04"/>
+<circle cx="12" cy="12" r="1" stroke="#FF0000" stroke-width="0.04"/>
+<rect x="1" y="4" width="22" height="16" rx="3" stroke="#FF0000" stroke-width="0.04"/>
+<rect x="4" y="1" width="16" height="22" rx="3" stroke="#FF0000" stroke-width="0.04"/>
+<rect x="2" y="2" width="20" height="20" rx="3" stroke="#FF0000" stroke-width="0.04"/>
+<path d="M0 0L24 24M24 0L0 24" stroke="#FF0000" stroke-width="0.04"/>
+<path d="M17 0V24M7 0V24M12 0V24" stroke="#FF0000" stroke-width="0.04"/>
+<path d="M0 7H24M0 17H24M0 12H24" stroke="#FF0000" stroke-width="0.04"/>
+</g>
+<path d="M10 3H3V21H21V14" stroke="black" stroke-width="2" stroke-linecap="square"/>
+<path d="M22 6H13V12" stroke="black" stroke-width="2"/>
+<path d="M19 3L22 6L19 9" stroke="black" stroke-width="2" stroke-linecap="square"/>
+</g>
+<defs>
+<clipPath id="clip0_790_16564">
+<rect width="24" height="24" fill="white"/>
+</clipPath>
+</defs>
+</svg>
