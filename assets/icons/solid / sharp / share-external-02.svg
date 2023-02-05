@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+  <g clip-path="url(#a)">
+    <path fill="#888" fill-opacity=".1" d="M0 0h24v24H0z"/>
+    <g opacity=".2">
+      <circle cx="12" cy="12" r="11" stroke="currentColor" stroke-width=".04"/>
+      <circle cx="12" cy="12" r="8" stroke="currentColor" stroke-width=".04"/>
+      <circle cx="12" cy="12" r="5" stroke="currentColor" stroke-width=".04"/>
+      <circle cx="12" cy="12" r="2" stroke="currentColor" stroke-width=".04"/>
+      <circle cx="12" cy="12" r="1" stroke="currentColor" stroke-width=".04"/>
+      <rect width="22" height="16" x="1" y="4" stroke="currentColor" stroke-width=".04" rx="3"/>
+      <rect width="16" height="22" x="4" y="1" stroke="currentColor" stroke-width=".04" rx="3"/>
+      <rect width="20" height="20" x="2" y="2" stroke="currentColor" stroke-width=".04" rx="3"/>
+      <path stroke="currentColor" stroke-width=".04" d="m0 0 24 24m0-24L0 24M17 0v24M7 0v24m5-24v24M0 7h24M0 17h24M0 12h24"/>
+    </g>
+    <path fill="#000" fill-rule="evenodd" d="M22 14.222V22H2V2h7.778l1.5 1.5H10.5v11h5v-6h.778L22 14.222ZM14 12v1h-2v-1h2Z" clip-rule="evenodd"/>
+    <path fill="#000" d="m22 6 .707.707.707-.707-.707-.707L22 6Zm-9 0V5h-1v1h1Zm-1 6v1h2v-1h-2Zm7.707-9.707L19 1.586 17.586 3l.707.707 1.414-1.414Zm-1.414 6L17.586 9 19 10.414l.707-.707-1.414-1.414ZM22 5h-9v2h9V5ZM12 6v6h2V6h-2Zm6.293-2.293 3 3 1.414-1.414-3-3-1.414 1.414Zm3 1.586-3 3 1.414 1.414 3-3-1.414-1.414Z"/>
+  </g>
+  <defs>
+    <clipPath id="a">
+      <path fill="#fff" d="M0 0h24v24H0z"/>
+    </clipPath>
+  </defs>
+</svg>

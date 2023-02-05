@@ -4,29 +4,109 @@
       "name": "Web",
       "icons": [
         {
-          "name": "External Link 01",
-          "url": "external-link-01.svg",
-          "keywords": ["box", "link", "hyperlink"]
+          "name": "Chain 01",
+          "url": "chain-01.svg",
+          "keywords": ["chain", "link", "hyperlink"]
         },
         {
-          "name": "External Link 02",
-          "url": "external-link-02.svg",
-          "keywords": ["box", "link", "hyperlink"]
-        }
-      ]
-    },
-    {
-      "name": "Category 2",
-      "icons": [
-        {
-          "name": "Icon 3",
-          "url": "icon_3.svg",
-          "keywords": ["keyword7", "keyword8", "keyword9"]
+          "name": "Chain 02",
+          "url": "chain-02.svg",
+          "keywords": ["chain", "link", "hyperlink"]
         },
         {
-          "name": "Icon 4",
-          "url": "icon_4.svg",
-          "keywords": ["keyword10", "keyword11", "keyword12"]
+          "name": "Chain 03",
+          "url": "chain-03.svg",
+          "keywords": ["chain", "link", "hyperlink"]
+        },
+        {
+          "name": "Chain 04",
+          "url": "chain-04.svg",
+          "keywords": ["chain", "link", "hyperlink"]
+        },
+        {
+          "name": "Chain 05",
+          "url": "chain-05.svg",
+          "keywords": ["chain", "link", "hyperlink"]
+        },
+        {
+          "name": "Chain 06",
+          "url": "chain-06.svg",
+          "keywords": ["chain", "link", "hyperlink"]
+        },
+        {
+          "name": "Chain Broken 01",
+          "url": "chain-broken-01.svg",
+          "keywords": ["chain", "broken", "disconnect", "link", "hyperlink"]
+        },
+        {
+          "name": "Chain Broken 02",
+          "url": "chain-broken-02.svg",
+          "keywords": ["chain", "broken", "disconnect", "link", "hyperlink"]
+        },
+        {
+          "name": "Clone 01",
+          "url": "clone-01.svg",
+          "keywords": ["clone", "copy", "box", "layer"]
+        },
+        {
+          "name": "Clone 02",
+          "url": "clone-02.svg",
+          "keywords": ["clone", "copy", "box", "layer"]
+        },
+        {
+          "name": "Clone 03",
+          "url": "clone-03.svg",
+          "keywords": ["clone", "copy", "box", "layer"]
+        },
+        {
+          "name": "Clone 04",
+          "url": "clone-04.svg",
+          "keywords": ["clone", "copy", "box", "layer"]
+        },
+        {
+          "name": "Clone 05",
+          "url": "clone-05.svg",
+          "keywords": ["clone", "copy", "box", "layer"]
+        },
+        {
+          "name": "Clone 06",
+          "url": "clone-06.svg",
+          "keywords": ["clone", "copy", "box", "layer"]
+        },
+        {
+          "name": "Share Arrow",
+          "url": "share-arrow.svg",
+          "keywords": ["share", "arrow"]
+        },
+        {
+          "name": "Share External 01",
+          "url": "share-external-01.svg",
+          "keywords": ["share", "external", "arrow"]
+        },
+        {
+          "name": "Share External 02",
+          "url": "share-external-02.svg",
+          "keywords": ["share", "external", "arrow"]
+        },
+        {
+          "name": "Share External 03",
+          "url": "share-external-03.svg",
+          "keywords": ["share", "external", "arrow"]
+        },
+        {
+          "name": "Share Internal 01",
+          "url": "share-internal-01.svg",
+          "keywords": ["share", "internal", "arrow"]
+        },
+        {
+          "name": "Share Internal 02",
+          "url": "share-internal-02.svg",
+          "keywords": ["share", "internal", "arrow"]
+        },
+        {
+          "name": "Share Internal 03",
+          "url": "share-internal-03.svg",
+          "keywords": ["share", "internal", "arrow"]
         }
       ]
     }
