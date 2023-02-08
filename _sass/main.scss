@@ -94,27 +94,27 @@
 }
 
 .explorer-grid {
-	@include apply('color-paragraph');
+	@include apply('color-white');
 	&.is-xs {
-		@include apply('grid grid-cols-20 p-10');
+		@include apply('grid grid-cols-6 sm.grid-cols-8 lg.grid-cols-20 p-10');
 		svg {
 			width: 14px;
 		}
 	}
 	&.is-sm {
-		@include apply('grid grid-cols-20 p-10');
+		@include apply('grid grid-cols-6 sm.grid-cols-8 lg.grid-cols-20 p-10');
 		svg {
 			width: 18px;
 		}
 	}
 	&.is-md {
-		@include apply('grid grid-cols-18 p-10');
+		@include apply('grid grid-cols-6 sm.grid-cols-8 lg.grid-cols-18 p-10 gap-10');
 		svg {
 			width: 24px;
 		}
 	}
 	&.is-lg {
-		@include apply('grid grid-cols-18 p-10');
+		@include apply('grid grid-cols-6 sm.grid-cols-8 lg.grid-cols-18 p-10');
 		svg {
 			width: 32px;
 			height: 32px;

@@ -3,7 +3,8 @@ title: Lightning Fast Utility Generator for Sass
 layout: layouts/base.njk
 ---
 
-{% include "partials/modals/icon-controls.njk" %}
+{% include "partials/dialogs/icon-controls.njk" %}
+{% include "partials/dialogs/icon-detail.njk" %}
 
 <div class="flex flex-wrap h-100p overflow-hidden">
   <aside class="relative flex-none sticky top-0 w-100p sm.w-320 sm.h-100vh overflow-hidden sm.overflow-auto bg-background z-1 border-b-2 sm.border-b-0 border-heading-accent">
@@ -29,10 +30,8 @@ layout: layouts/base.njk
           <a href="https://github.com/ThinkUniform/uniformcss" class="sm.hidden flex align-items-center text-md leading-100 color-white color-opacity-100">
             <ion-icon name="logo-github" class="w-24 h-24"></ion-icon>
           </a>
-          <button class="h-32 flex sm.hidden flex-col gap-4 align-items-center justify-content-center" @click="dialogs.iconControls = true">
-            <div class="h-2 w-20 bg-pink-300"></div>
-            <div class="h-2 w-20 bg-pink-300"></div>
-            <div class="h-2 w-20 bg-pink-300"></div>
+          <button class="h-32 flex sm.hidden flex-col gap-4 align-items-center justify-content-center color-white" @click="dialogs.iconControls = true">
+            <ion-icon name="options" class="w-24 h-24"></ion-icon>
           </button>
         </div>
 
@@ -43,7 +42,7 @@ layout: layouts/base.njk
           <div class="absolute top-0 left-0 pointer-events-none flex align-items-center justify-content-center w-40 h-40 color-white">
             <svg class="fill-current w-18 h-18" xmlns="http://www.w3.org/2000/svg" class="ionicon" viewBox="0 0 512 512"><title>Search</title><path d="M456.69 421.39L362.6 327.3a173.81 173.81 0 0034.84-104.58C397.44 126.38 319.06 48 222.72 48S48 126.38 48 222.72s78.38 174.72 174.72 174.72A173.81 173.81 0 00327.3 362.6l94.09 94.09a25 25 0 0035.3-35.3zM97.92 222.72a124.8 124.8 0 11124.8 124.8 124.95 124.95 0 01-124.8-124.8z"/></svg>
           </div>
-          <input type="text" class="flex align-items-center h-40 pl-40 border-1 color-white color-opacity-80 text-sm border-pink-300 radius-md bg-black bg-opacity-40 appearance-none" placeholder="Search by keyword" x-model="searchTerm" @input="filterIcons()">
+          <input type="text" class="flex align-items-center h-40 pl-40 border-1 color-white color-opacity-80 text-sm border-pink-300 radius-md bg-black bg-opacity-40 appearance-none" placeholder="Search by keyword" x-model="searchTerm" @input="filterIcons()" style="box-shadow: 0px 4px 64px rgba(255, 103, 103, 0.37);">
         </div>
       </div>
 
@@ -55,7 +54,7 @@ layout: layouts/base.njk
           <div class="absolute top-0 left-0 pointer-events-none flex align-items-center justify-content-center w-40 h-40 color-white">
             <svg class="fill-current w-18 h-18" xmlns="http://www.w3.org/2000/svg" class="ionicon" viewBox="0 0 512 512"><title>Search</title><path d="M456.69 421.39L362.6 327.3a173.81 173.81 0 0034.84-104.58C397.44 126.38 319.06 48 222.72 48S48 126.38 48 222.72s78.38 174.72 174.72 174.72A173.81 173.81 0 00327.3 362.6l94.09 94.09a25 25 0 0035.3-35.3zM97.92 222.72a124.8 124.8 0 11124.8 124.8 124.95 124.95 0 01-124.8-124.8z"/></svg>
           </div>
-          <input type="text" class="flex align-items-center h-40 pl-40 border-1 color-white color-opacity-80 text-sm border-pink-300 radius-md bg-black bg-opacity-40 appearance-none" placeholder="Search by keyword" x-model="searchTerm" @input="filterIcons()">
+          <input type="text" class="flex align-items-center h-40 pl-40 border-1 color-white color-opacity-80 text-sm border-pink-300 radius-md bg-black bg-opacity-40 appearance-none" placeholder="Search by keyword" x-model="searchTerm" @input="filterIcons()" style="box-shadow: 0px 4px 64px rgba(255, 103, 103, 0.37);">
         </div>
 
         <h3 class="bold text-md color-heading-accent mb-12">Choose your flavor</h3>
@@ -120,16 +119,16 @@ layout: layouts/base.njk
 
           <li>
             <h5 class="text-2xs leading-100 bold uppercase tracking-loose color-white mb-12">
-              Corner Radius • <span class="color-heading-accent"><span x-text="iconSettings.cornerRadius"></span>PX <span x-show="iconSettings.cornerRadius == 0">(Sharp)</span><span x-show="iconSettings.cornerRadius == 4">(Default)</span></span>
+              Roundness • <span class="color-heading-accent"><span x-show="iconSettings.cornerRadius == 0">Sharp (0PX)</span><span x-show="iconSettings.cornerRadius == 2">Normal (2PX)</span><span x-show="iconSettings.cornerRadius == 4">Rounded (4PX)</span></span>
             </h5>
-            <input type="range" min="0" max="2" value="4" class="slider w-100p h-2 bg-white bg-opacity-30 radius-lg appearance-none cursor-pointer" x-model="iconSettings.cornerRadiusSliderValue" @input="changeCornerRadius($event)">
+            <input type="range" min="0" max="2" value="2" class="slider w-100p h-2 bg-white bg-opacity-30 radius-lg appearance-none cursor-pointer" x-model="iconSettings.cornerRadiusSliderValue" @input="changeCornerRadius($event)">
           </li>
 
           <li>
             <h5 class="text-2xs leading-100 bold uppercase tracking-loose color-white mb-12">
               Stroke Width • <span class="color-heading-accent"><span x-text="iconSettings.strokeWidth"></span>PX <span x-show="iconSettings.strokeWidth == 2">(Default)</span></span>
             </h5>
-            <input type="range" min="0" max="20" value="10" class="slider w-100p h-2 bg-white bg-opacity-30 radius-lg appearance-none cursor-pointer" x-model="iconSettings.strokeWidthSliderValue" @input="changeStrokeWidth($event)">
+            <input type="range" min="5" max="15" value="10" class="slider w-100p h-2 bg-white bg-opacity-30 radius-lg appearance-none cursor-pointer" x-model="iconSettings.strokeWidthSliderValue" @input="changeStrokeWidth($event)">
           </li>
 
         
@@ -167,13 +166,17 @@ layout: layouts/base.njk
       {%- for category in icons.categories -%}
         {%- for icon in category.icons -%}
           <li class="grid-icon" alt="{{ icon.name }}" data-keywords="{{ icon.keywords }}" x-show="iconSettings.styles.line">
-            <button>
-              <img src="/assets/icons/line/sharp/{{ icon.url }}" onload="SVGInject(this)">
+            <button class="ratio-square flex align-items-center justify-content-center hover.bg-white hover.bg-opacity-10 transition-100 radius-lg relative" @click.stop="openIconDetail(name = '{{ icon.name }}', slug = '{{ icon.slug }}', id = 'line-sharp-{{ icon.slug }}', url = '/assets/icons/line/sharp/{{ icon.url }}'), iconDetails.copyText = 'Copy SVG', dialogs.iconDetails = true">
+              <div class="absolute top-50p left-50p transform translate-x-n50p translate-y-n50p" id="line-sharp-{{ icon.slug }}">
+                {% include "icons/line/sharp/" + icon.url %}
+              </div>
             </button>
           </li>
           <li class="grid-icon" alt="{{ icon.name }}" data-keywords="{{ icon.keywords }}" x-show="iconSettings.styles.solid">
-            <button>
-              <img src="/assets/icons/solid/sharp/{{ icon.url }}" onload="SVGInject(this)">
+            <button class="ratio-square flex align-items-center justify-content-center hover.bg-white hover.bg-opacity-10 transition-100 radius-lg relative" @click.stop="openIconDetail(name = '{{ icon.name }}', slug = '{{ icon.slug }}', id = 'solid-sharp-{{ icon.slug }}', url = '/assets/icons/solid/sharp/{{ icon.url }}'), iconDetails.copyText = 'Copy SVG', dialogs.iconDetails = true">
+              <div class="absolute top-50p left-50p transform translate-x-n50p translate-y-n50p" id="solid-sharp-{{ icon.slug }}">
+                {% include "icons/solid/sharp/" + icon.url %}
+              </div>
             </button>
           </li>
         {%- endfor -%}
@@ -183,13 +186,17 @@ layout: layouts/base.njk
       {%- for category in icons.categories -%}
         {%- for icon in category.icons -%}
           <li class="grid-icon" alt="{{ icon.name }}" data-keywords="{{ icon.keywords }}" x-show="iconSettings.styles.line">
-            <button>
-              <img src="/assets/icons/line/normal/{{ icon.url }}" onload="SVGInject(this)">
+            <button class="ratio-square flex align-items-center justify-content-center hover.bg-white hover.bg-opacity-10 transition-100 radius-lg relative" @click.stop="openIconDetail(name = '{{ icon.name }}', slug = '{{ icon.slug }}', id = 'line-normal-{{ icon.slug }}', url = '/assets/icons/line/normal/{{ icon.url }}'), iconDetails.copyText = 'Copy SVG', dialogs.iconDetails = true">
+              <div class="absolute top-50p left-50p transform translate-x-n50p translate-y-n50p" id="line-normal-{{ icon.slug }}">
+                {% include "icons/line/normal/" + icon.url %}
+              </div>
             </button>
           </li>
           <li class="grid-icon" alt="{{ icon.name }}" data-keywords="{{ icon.keywords }}" x-show="iconSettings.styles.solid">
-            <button>
-              <img src="/assets/icons/solid/normal/{{ icon.url }}" onload="SVGInject(this)">
+            <button class="ratio-square flex align-items-center justify-content-center hover.bg-white hover.bg-opacity-10 transition-100 radius-lg relative" @click.stop="openIconDetail(name = '{{ icon.name }}', slug = '{{ icon.slug }}', id = 'solid-normal-{{ icon.slug }}', url = '/assets/icons/solid/normal/{{ icon.url }}'), iconDetails.copyText = 'Copy SVG', dialogs.iconDetails = true">
+              <div class="absolute top-50p left-50p transform translate-x-n50p translate-y-n50p" id="solid-normal-{{ icon.slug }}">
+                {% include "icons/solid/normal/" + icon.url %}
+              </div>
             </button>
           </li>
         {%- endfor -%}
@@ -199,13 +206,17 @@ layout: layouts/base.njk
       {%- for category in icons.categories -%}
         {%- for icon in category.icons -%}
           <li class="grid-icon" alt="{{ icon.name }}" data-keywords="{{ icon.keywords }}" x-show="iconSettings.styles.line">
-            <button>
-              <img src="/assets/icons/line/rounded/{{ icon.url }}" onload="SVGInject(this)">
+            <button class="ratio-square flex align-items-center justify-content-center hover.bg-white hover.bg-opacity-10 transition-100 radius-lg relative" @click.stop="openIconDetail(name = '{{ icon.name }}', slug = '{{ icon.slug }}', id = 'line-rounded-{{ icon.slug }}', url = '/assets/icons/line/rounded/{{ icon.url }}'), iconDetails.copyText = 'Copy SVG', dialogs.iconDetails = true">
+              <div class="absolute top-50p left-50p transform translate-x-n50p translate-y-n50p" id="line-rounded-{{ icon.slug }}">
+                {% include "icons/line/rounded/" + icon.url %}
+              </div>
             </button>
           </li>
           <li class="grid-icon" alt="{{ icon.name }}" data-keywords="{{ icon.keywords }}" x-show="iconSettings.styles.solid">
-            <button>
-              <img src="/assets/icons/solid/rounded/{{ icon.url }}" onload="SVGInject(this)">
+            <button class="ratio-square flex align-items-center justify-content-center hover.bg-white hover.bg-opacity-10 transition-100 radius-lg relative" @click.stop="openIconDetail(name = '{{ icon.name }}', slug = '{{ icon.slug }}', id = 'solid-rounded-{{ icon.slug }}', url = '/assets/icons/solid/rounded/{{ icon.url }}'), iconDetails.copyText = 'Copy SVG', dialogs.iconDetails = true">
+              <div class="absolute top-50p left-50p transform translate-x-n50p translate-y-n50p" id="solid-rounded-{{ icon.slug }}">
+                {% include "icons/solid/rounded/" + icon.url %}
+              </div>
             </button>
           </li>
         {%- endfor -%}

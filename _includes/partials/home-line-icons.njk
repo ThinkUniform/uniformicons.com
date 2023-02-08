@@ -1,29 +1,91 @@
 <div class="relative h-512">
-  <ul class="grid grid-cols-18 p-10 color-white">
-    {%- for categories, categoryContent in icons -%}
-      {%- for icon, iconMeta in categoryContent -%}
-        <li 
-          class="grid-icon" 
-          x-data="{ 
-            
-          }"
-        >
-          <div x-show="iconSettings.styles.line">
-            <img src="/assets/img/icons/line/link-external-01.svg" onload="SVGInject(this)">
-          </div>
-          <div x-show="iconSettings.styles.duoLine">
-            <img src="/assets/img/icons/line/link-external-01.svg" onload="SVGInject(this)">
-          </div>
-          <div x-show="iconSettings.styles.duoTone">
-            <img src="/assets/img/icons/line/link-external-01.svg" onload="SVGInject(this)">
-          </div>
-          
-        </li>
+  <div x-show="tab == 0">
+    <ul class="explorer-grid" :class="explorerSettings.gridSize" x-show="iconSettings.cornerRadius == 0">
+      {%- for category in icons.categories -%}
+        {%- for icon in category.icons -%}
+          <li class="grid-icon" alt="{{ icon.name }}" data-keywords="{{ icon.keywords }}">
+            <button class="pointer-events-none ratio-square flex align-items-center justify-content-center hover.bg-white hover.bg-opacity-10 transition-100 radius-lg relative" @click.stop="openIconDetail(name = '{{ icon.name }}', slug = '{{ icon.slug }}', id = 'line-sharp-{{ icon.slug }}', url = '/assets/icons/line/sharp/{{ icon.url }}'), iconDetails.copyText = 'Copy SVG', dialogs.iconDetails = true">
+              <div class="absolute top-50p left-50p transform translate-x-n50p translate-y-n50p" id="line-sharp-{{ icon.slug }}">
+                {% include "icons/line/sharp/" + icon.url %}
+              </div>
+            </button>
+          </li>
+        {%- endfor -%}
       {%- endfor -%}
+    </ul>
 
-    {%- endfor -%}
-  </ul>
+    <ul class="explorer-grid" :class="explorerSettings.gridSize" x-show="iconSettings.cornerRadius == 2">
+      {%- for category in icons.categories -%}
+        {%- for icon in category.icons -%}
+          <li class="grid-icon" alt="{{ icon.name }}" data-keywords="{{ icon.keywords }}">
+            <button class="pointer-events-none ratio-square flex align-items-center justify-content-center hover.bg-white hover.bg-opacity-10 transition-100 radius-lg relative" @click.stop="openIconDetail(name = '{{ icon.name }}', slug = '{{ icon.slug }}', id = 'line-normal-{{ icon.slug }}', url = '/assets/icons/line/normal/{{ icon.url }}'), iconDetails.copyText = 'Copy SVG', dialogs.iconDetails = true">
+              <div class="absolute top-50p left-50p transform translate-x-n50p translate-y-n50p" id="line-normal-{{ icon.slug }}">
+                {% include "icons/line/normal/" + icon.url %}
+              </div>
+            </button>
+          </li>
+        {%- endfor -%}
+      {%- endfor -%}
+    </ul>
 
+    <ul class="explorer-grid" :class="explorerSettings.gridSize" x-show="iconSettings.cornerRadius == 4">
+      {%- for category in icons.categories -%}
+        {%- for icon in category.icons -%}
+          <li class="grid-icon" alt="{{ icon.name }}" data-keywords="{{ icon.keywords }}">
+            <button class="pointer-events-none ratio-square flex align-items-center justify-content-center hover.bg-white hover.bg-opacity-10 transition-100 radius-lg relative" @click.stop="openIconDetail(name = '{{ icon.name }}', slug = '{{ icon.slug }}', id = 'line-rounded-{{ icon.slug }}', url = '/assets/icons/line/rounded/{{ icon.url }}'), iconDetails.copyText = 'Copy SVG', dialogs.iconDetails = true">
+              <div class="absolute top-50p left-50p transform translate-x-n50p translate-y-n50p" id="line-rounded-{{ icon.slug }}">
+                {% include "icons/line/rounded/" + icon.url %}
+              </div>
+            </button>
+          </li>
+        {%- endfor -%}
+      {%- endfor -%}
+    </ul>
+  </div>
+
+  <div x-show="tab == 1">
+    <ul class="explorer-grid" :class="explorerSettings.gridSize" x-show="iconSettings.cornerRadius == 0">
+      {%- for category in icons.categories -%}
+        {%- for icon in category.icons -%}
+          <li class="grid-icon" alt="{{ icon.name }}" data-keywords="{{ icon.keywords }}">
+            <button class="pointer-events-none ratio-square flex align-items-center justify-content-center hover.bg-white hover.bg-opacity-10 transition-100 radius-lg relative" @click.stop="openIconDetail(name = '{{ icon.name }}', slug = '{{ icon.slug }}', id = 'solid-sharp-{{ icon.slug }}', url = '/assets/icons/solid/sharp/{{ icon.url }}'), iconDetails.copyText = 'Copy SVG', dialogs.iconDetails = true">
+              <div class="absolute top-50p left-50p transform translate-x-n50p translate-y-n50p" id="solid-sharp-{{ icon.slug }}">
+                {% include "icons/solid/sharp/" + icon.url %}
+              </div>
+            </button>
+          </li>
+        {%- endfor -%}
+      {%- endfor -%}
+    </ul>
+
+    <ul class="explorer-grid" :class="explorerSettings.gridSize" x-show="iconSettings.cornerRadius == 2">
+      {%- for category in icons.categories -%}
+        {%- for icon in category.icons -%}
+          <li class="grid-icon" alt="{{ icon.name }}" data-keywords="{{ icon.keywords }}">
+            <button class="pointer-events-none ratio-square flex align-items-center justify-content-center hover.bg-white hover.bg-opacity-10 transition-100 radius-lg relative" @click.stop="openIconDetail(name = '{{ icon.name }}', slug = '{{ icon.slug }}', id = 'solid-normal-{{ icon.slug }}', url = '/assets/icons/solid/normal/{{ icon.url }}'), iconDetails.copyText = 'Copy SVG', dialogs.iconDetails = true">
+              <div class="absolute top-50p left-50p transform translate-x-n50p translate-y-n50p" id="solid-normal-{{ icon.slug }}">
+                {% include "icons/solid/normal/" + icon.url %}
+              </div>
+            </button>
+          </li>
+        {%- endfor -%}
+      {%- endfor -%}
+    </ul>
+
+    <ul class="explorer-grid" :class="explorerSettings.gridSize" x-show="iconSettings.cornerRadius == 4">
+      {%- for category in icons.categories -%}
+        {%- for icon in category.icons -%}
+          <li class="grid-icon" alt="{{ icon.name }}" data-keywords="{{ icon.keywords }}">
+            <button class="pointer-events-none ratio-square flex align-items-center justify-content-center hover.bg-white hover.bg-opacity-10 transition-100 radius-lg relative" @click.stop="openIconDetail(name = '{{ icon.name }}', slug = '{{ icon.slug }}', id = 'solid-rounded-{{ icon.slug }}', url = '/assets/icons/solid/rounded/{{ icon.url }}'), iconDetails.copyText = 'Copy SVG', dialogs.iconDetails = true">
+              <div class="absolute top-50p left-50p transform translate-x-n50p translate-y-n50p" id="solid-rounded-{{ icon.slug }}">
+                {% include "icons/solid/rounded/" + icon.url %}
+              </div>
+            </button>
+          </li>
+        {%- endfor -%}
+      {%- endfor -%}
+    </ul>
+  </div>
 
   <div class="absolute bottom-0 left-0 w-100p flex align-items-center justify-content-center">
     <div class="mb-32 radius-xl bg-black p-20">
@@ -32,10 +94,10 @@
           <div class="flex align-items-center mb-10 w-192">
             <div class="w-10 h-10 mr-10 border-t-2 border-l-2 radius-tl-xs border-white"></div>
             <h5 class="text-2xs leading-100 bold uppercase tracking-loose color-white">
-              Roundness • <span class="color-heading-accent">Curved (2px)</span>
+              Roundness • <span class="color-heading-accent"><span x-show="iconSettings.cornerRadius == 0">Sharp (0PX)</span><span x-show="iconSettings.cornerRadius == 2">Normal (2PX)</span><span x-show="iconSettings.cornerRadius == 4">Rounded (4PX)</span></span>
             </h5>
           </div>
-          <input id="default-range" type="range" min="1" max="3" value="3" class="slider w-100p h-2 bg-white bg-opacity-30 radius-lg appearance-none cursor-pointer" x-model="iconSettings.roundness">
+          <input type="range" min="0" max="2" value="2" class="slider w-100p h-2 bg-white bg-opacity-30 radius-lg appearance-none cursor-pointer" x-model="iconSettings.cornerRadiusSliderValue" @input="changeCornerRadius($event)">
         </li>
         <li>
           <div class="flex align-items-center mb-10 w-192">
@@ -47,10 +109,10 @@
               </div>
             </div>
             <h5 class="text-2xs leading-100 bold uppercase tracking-loose color-white">
-              Stroke Width • <span class="color-heading-accent" x-text="iconSettings.strokeWidth">Default (2px)</span>
+              Stroke Width • <span class="color-heading-accent"><span x-text="iconSettings.strokeWidth"></span>PX <span x-show="iconSettings.strokeWidth == 2">(Default)</span></span>
             </h5>
           </div>
-          <input id="default-range" type="range" min="0" max="10" value="10" class="slider w-100p h-2 bg-white bg-opacity-30 radius-lg appearance-none cursor-pointer" x-model="iconSettings.strokeWidthSliderValue" @input="changeStrokeWidth($event)">
+          <input type="range" min="5" max="15" value="10" class="slider w-100p h-2 bg-white bg-opacity-30 radius-lg appearance-none cursor-pointer" x-model="iconSettings.strokeWidthSliderValue" @input="changeStrokeWidth($event)">
         </li>
       </ul>
     </div>

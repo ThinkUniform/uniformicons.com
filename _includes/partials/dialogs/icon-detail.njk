@@ -1,0 +1,78 @@
+
+
+<div 
+  class="flex fixed bottom-0 left-0 sm.left-50p sm.mb-48 z-9 w-100p sm.max-w-448 sm.ml-n224 p-20"
+  x-cloak
+  x-show="dialogs.iconDetails"
+  @click.away = "dialogs.iconDetails = false"
+
+  x-transition
+>
+  <div class="flex align-items-center justify-content-center p-16 sm.p-12 gap-24 w-100p radius-xl bg-purple-800">
+
+    <div class="hidden sm.flex align-items-center justify-content-center w-112 h-112 radius-sm bg-black bg-opacity-40 flex-none color-white" id="iconDetailPreview">
+      <img src="/assets/icons/line/normal/chain-01.svg" :src="iconDetails.url" class="w-56 h-56">
+    </div>
+
+    <div class="flex-1">
+      <div class="flex align-items-center gap-20 mb-16 sm.mb-4">
+        <div class="flex sm.hidden align-items-center justify-content-center w-72 h-72 radius-sm bg-black bg-opacity-40 flex-none color-white" id="iconDetailPreviewSmall">
+          <img src="/assets/icons/line/normal/chain-01.svg" :src="iconDetails.url" class="w-32 h-32">
+        </div>
+        <div>
+          <h3 class="bold text-md leading-140 color-heading-accent mb-2 max-w-192 overflow-hidden ellipsis space-nowrap" x-text="iconDetails.name">Filing Cabinet</h3>
+          <div class="flex align-items-center gap-4 font-mono text-sm semibold color-paragraph sm.mb-12">
+            <span x-text="iconDetails.slug" class="max-w-192 overflow-hidden ellipsis space-nowrap">filing-cabinet</span>
+            <div x-data="{
+                tooltip: false
+              }" x-on:mouseleave="tooltip = false">
+              <div class="relative">
+                <button class="flex align-items-center h-24" @click="copySlug(), tooltip = true">
+                  <ion-icon name="copy"></ion-icon>
+                </button>
+
+                <div class="absolute bottom-100p left-50p transform translate-x-n50p z-10 mb-4 bg-black radius-sm space-normal z-2 pointer-events-none" x-show="tooltip" x-transition:enter="duration-200" x-transition:enter-start="opacity-0 mb-0" x-transition:enter-end="opacity-100 mb-4" x-transition:leave="duration-200" x-transition:leave-start="opacity-100 mb-0" x-transition:leave-end="opacity-0 mb-4" style="display: none;">
+                  <div class="flex align-items-center font-sans px-8 py-6 space-nowrap text-xs leading-100 regular color-white">
+                    Copied!
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="hidden sm.flex align-items-center gap-18">
+        <button class="flex align-items-center color-yellow-300 semibold text-sm" @click="copySVG()">
+          <ion-icon name="code-slash" class="w-20 h-20 mr-6"></ion-icon> <span x-text="iconDetails.copyText">Copy SVG</span>
+        </button>
+        <a :href="iconDetails.url" target="_self" class="color-yellow-300 semibold text-sm">
+          Download
+        </a>
+        {# <button class="inline-flex align-items-center justify-content-center h-28 px-10 color-black bg-yellow-300 hover.bg-yellow-400 transition-100 radius-sm semibold text-sm">
+          <ion-icon name="code-slash" class="w-20 h-20 mr-10"></ion-icon> Copy SVG
+        </button>
+        <button class="inline-flex align-items-center justify-content-center w-28 h-28 color-yellow-300 bg-black hover.bg-yellow-400 transition-100 radius-sm">
+          <ion-icon name="cloud-download" class="w-16 h-16"></ion-icon>
+        </button> #}
+      </div>
+
+      <div class="flex sm.hidden align-items-center gap-24 border-t-1 border-white border-opacity-20 pt-16">
+        <button class="flex align-items-center color-yellow-300 semibold text-sm" @click="copySVG()">
+          <ion-icon name="code-slash" class="w-20 h-20 mr-6"></ion-icon> <span x-text="iconDetails.copyText">Copy SVG</span>
+        </button>
+        <a :href="iconDetails.url" target="_self" class="color-yellow-300 semibold text-sm">
+          Download
+        </a>
+        {# <button class="inline-flex align-items-center justify-content-center h-36 px-10 color-black bg-yellow-300 hover.bg-yellow-400 transition-100 radius-sm semibold text-sm">
+          <ion-icon name="code-slash" class="w-20 h-20 mr-10"></ion-icon> Copy SVG
+        </button>
+        <button class="inline-flex align-items-center justify-content-center w-36 h-36 color-black bg-yellow-300 hover.bg-yellow-400 transition-100 radius-sm">
+          <ion-icon name="cloud-download" class="w-20 h-20"></ion-icon>
+        </button> #}
+      </div>
+
+    </div>
+  </div>
+</div>

@@ -3,24 +3,29 @@ document.addEventListener('alpine:init', () => {
   // Main
   Alpine.data('main', () => ({
     dialogs: {
-      iconControls: false
+      iconControls: false,
+      iconDetails: false,
+    },
+    iconDetails: {
+      name: 'Clone 01',
+      slug: 'clone-01',
+      url: '/assets/icons/line/normal/clone-01.svg',
+      id: 'line-normal-clone-01',
+      copyText: 'Copy SVG',
     },
     iconSettings: {
-      cornerRadiusSliderValue: 2,
-      cornerRadius: 4,
+      cornerRadiusSliderValue: 1,
+      cornerRadius: 2,
       strokeWidthSliderValue: 10,
       strokeWidth: 2,
       styles: {
         line: true,
-        duoLine: false,
-        duoTone: false,
-        duoFill: false,
-        solid: false
-      }
+        solid: false,
+      },
     },
 
     explorerSettings: {
-      gridSize: 'is-md'
+      gridSize: 'is-md',
     },
 
     // Icon Search Component
@@ -28,8 +33,34 @@ document.addEventListener('alpine:init', () => {
     searchTerm: '',
     filteredIcons: [],
 
-    init() {
+    init() {},
+    openIconDetail(name, slug, id, url) {
+      this.iconDetails.name = name;
+      this.iconDetails.slug = slug;
+      this.iconDetails.url = url;
+      this.iconDetails.id = id;
 
+      document.getElementById('iconDetailPreview').innerHTML =
+        '<img src="' + url + '" class="w-56 h-56" onload="SVGInject(this)">';
+      document.querySelectorAll('#iconDetailPreview path').forEach((el, i) => {
+        el.setAttribute('stroke-width', this.iconSettings.strokeWidth);
+      });
+      document.getElementById('iconDetailPreviewSmall').innerHTML =
+        '<img src="' + url + '" class="w-32 h-32" onload="SVGInject(this)">';
+      document.querySelectorAll('#iconDetailPreviewSmall path').forEach((el, i) => {
+        el.setAttribute('stroke-width', this.iconSettings.strokeWidth);
+      });
+    },
+    copySlug() {
+      navigator.clipboard.writeText(this.iconDetails.slug);
+    },
+    copySVG() {
+      let svgElement = document.querySelector('#' + this.iconDetails.id + ' svg');
+      let svgString = new XMLSerializer().serializeToString(svgElement);
+      navigator.clipboard.writeText(svgString).then(() => {
+        console.log('SVG copied to clipboard');
+        this.iconDetails.copyText = 'Copied!';
+      });
     },
     filterIcons() {
       console.log(this.searchTerm);
@@ -37,8 +68,9 @@ document.addEventListener('alpine:init', () => {
       let icons = document.querySelectorAll('.grid-icon');
       console.log(icons.length);
       for (let i = 0; i < icons.length; i++) {
-        
-        let searchContent = icons[i].getAttribute('data-keywords').toLowerCase();
+        let searchContent = icons[i]
+          .getAttribute('data-keywords')
+          .toLowerCase();
         console.log(searchContent);
         icons[i].style.display = searchContent.includes(searchTerm)
           ? 'flex'
@@ -55,6 +87,12 @@ document.addEventListener('alpine:init', () => {
         2
       );
       document.querySelectorAll('.grid-icon path').forEach((el, i) => {
+        el.setAttribute('stroke-width', this.iconSettings.strokeWidth);
+      });
+      document.querySelectorAll('#iconDetailPreview path').forEach((el, i) => {
+        el.setAttribute('stroke-width', this.iconSettings.strokeWidth);
+      });
+      document.querySelectorAll('#iconDetailPreviewSmall path').forEach((el, i) => {
         el.setAttribute('stroke-width', this.iconSettings.strokeWidth);
       });
     },
